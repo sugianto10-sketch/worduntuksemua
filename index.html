@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1C45">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Mahir Microsoft Word: Panduan Praktis dari Dasar hingga Dokumen Profesional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF2F9; --paper:#FFFFFF; --ink:#14213D; --muted:#55627A; --blue:#2B579A; --blue-d:#0E2A5A;
+  --line:#D6DEEC; --tint:#E7EFFB; --hl:#FFD84D; --hl-soft:#FFF4C2; --on-hl:#14213D; --wm:rgba(43,87,154,.075);
+  --shadow:0 1px 2px rgba(14,42,90,.08),0 12px 40px rgba(14,42,90,.08);
+  --display:"Bricolage Grotesque","Segoe UI",Arial,sans-serif;
+  --body:"Literata",Georgia,"Times New Roman",serif;
+  --side:288px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1222; --paper:#111B31; --ink:#E8EEF9; --muted:#9DAECB; --blue:#7FA6E8; --blue-d:#081027;
+    --line:#22314F; --tint:#182744; --hl-soft:#3A3413; --wm:rgba(127,166,232,.08);
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 40px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1222; --paper:#111B31; --ink:#E8EEF9; --muted:#9DAECB; --blue:#7FA6E8; --blue-d:#081027;
+  --line:#22314F; --tint:#182744; --hl-soft:#3A3413; --wm:rgba(127,166,232,.08);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 40px rgba(0,0,0,.35);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.75;-webkit-font-smoothing:antialiased}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--hl);outline-offset:2px;border-radius:4px}
+button{font:inherit;color:inherit;cursor:pointer}
+kbd{font-family:var(--display);font-size:.82em;font-weight:700;background:var(--tint);border:1px solid var(--line);border-bottom-width:3px;border-radius:6px;padding:.05em .5em;white-space:nowrap}
+
+/* ---------- Top bar ---------- */
+.topbar{position:fixed;left:0;right:0;top:0;z-index:30;display:flex;align-items:center;gap:.75rem;
+  padding:calc(.6rem + env(safe-area-inset-top,0px)) 1rem .6rem calc(var(--side) + 1.5rem);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);font-family:var(--display)}
+.topbar .brand{font-weight:800;text-decoration:none;color:var(--ink);letter-spacing:-.01em;margin-right:auto}
+.topbar .tl{font-weight:500;font-size:.95rem;text-decoration:none;color:var(--muted);padding:.35rem .7rem;border-radius:999px}
+.topbar .tl:hover,.topbar .tl[aria-current="page"]{background:var(--tint);color:var(--ink)}
+.icon-btn{border:1px solid var(--line);background:var(--paper);border-radius:999px;width:40px;height:40px;display:grid;place-items:center}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.menu-btn{display:none}
+#progress{position:fixed;left:0;top:0;z-index:60;height:3px;width:0;background:var(--hl);pointer-events:none}
+
+/* ---------- Sidebar ---------- */
+.side{position:fixed;left:0;top:0;bottom:0;width:var(--side);z-index:40;background:var(--blue-d);color:#E8EEF9;overflow-y:auto;
+  padding:calc(1.4rem + env(safe-area-inset-top,0px)) 1rem calc(1.4rem + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:1rem;font-family:var(--display)}
+.side .logo{display:flex;gap:.75rem;align-items:center;text-decoration:none;color:#fff}
+.side .logo b{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--blue);font-size:1.5rem;font-weight:800;color:#fff;flex:none;box-shadow:inset 0 -3px 0 rgba(0,0,0,.2)}
+.side .logo span{font-weight:800;line-height:1.15;font-size:1.05rem}
+.side .logo small{display:block;font-weight:500;color:#A9BCE0;font-size:.78rem;margin-top:.15rem}
+.side h3{margin:.6rem .6rem 0;font-size:.85rem;font-weight:500;color:#9FB4DD;letter-spacing:.02em}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side nav a{display:flex;gap:.6rem;align-items:baseline;text-decoration:none;color:#D6E1F5;padding:.5rem .65rem;border-radius:10px;font-size:.95rem;line-height:1.3}
+.side nav a .n{flex:none;min-width:1.7rem;font-weight:700;color:#8FA9DC}
+.side nav a:hover{background:rgba(255,255,255,.08)}
+.side nav a[aria-current="page"]{background:var(--hl);color:var(--on-hl)}
+.side nav a[aria-current="page"] .n{color:var(--on-hl)}
+.side .who{margin-top:auto;padding:.9rem .65rem 0;border-top:1px solid rgba(255,255,255,.14);font-size:.82rem;color:#A9BCE0;line-height:1.45}
+.side .who b{display:block;color:#fff;font-size:.95rem}
+.scrim{display:none}
+
+/* ---------- Main ---------- */
+main{margin-left:var(--side);padding:calc(84px + env(safe-area-inset-top,0px)) clamp(1rem,3vw,2.5rem) 3rem}
+.page{position:relative;max-width:880px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+.page[hidden]{display:none}
+.page::before{content:"";position:absolute;inset:0;background:var(--wm);pointer-events:none;
+  -webkit-mask-image:var(--wm-img);mask-image:var(--wm-img);-webkit-mask-size:620px 420px;mask-size:620px 420px;-webkit-mask-repeat:repeat;mask-repeat:repeat}
+.sheet{position:relative;padding:clamp(1.4rem,4.5vw,3.6rem)}
+.sheet:focus{outline:none}
+.running{display:flex;justify-content:space-between;gap:1rem;font-family:var(--display);font-size:.85rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:.7rem;margin-bottom:2rem}
+
+h1,h2,h3{font-family:var(--display);line-height:1.15;letter-spacing:-.015em;margin:0}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;margin-bottom:1rem}
+h2{font-size:1.55rem;font-weight:700;margin:2.8rem 0 1rem;display:flex;gap:.7rem;align-items:baseline}
+h2 .sec-no{flex:none;font-size:.9rem;font-weight:700;background:var(--hl);color:var(--on-hl);border-radius:6px;padding:.15rem .5rem}
+h3{font-size:1.15rem;font-weight:700;margin:1.8rem 0 .6rem}
+p{margin:0 0 1rem}
+.chip{display:inline-block;font-family:var(--display);font-weight:700;font-size:.9rem;background:var(--hl);color:var(--on-hl);padding:.25rem .8rem;border-radius:999px;margin-bottom:1rem}
+.lead{font-size:1.2rem;color:var(--muted);max-width:60ch}
+
+.defs{display:grid;grid-template-columns:minmax(120px,215px) 1fr;margin:0 0 1.2rem;border-top:1px solid var(--line)}
+.defs dt,.defs dd{margin:0;padding:.75rem 0;border-bottom:1px solid var(--line)}
+.defs dt{font-family:var(--display);font-weight:700;padding-right:1rem}
+.defs dd{color:var(--ink)}
+.defs dd small{display:block;color:var(--muted)}
+ul.plain{padding-left:1.2rem;margin:0 0 1.2rem}
+ul.plain li{margin-bottom:.4rem}
+ol.steps{list-style:none;counter-reset:s;padding:0;margin:0 0 1.4rem}
+ol.steps li{counter-increment:s;position:relative;padding:.35rem 0 .35rem 2.8rem;margin-bottom:.5rem}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:.3rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--blue);color:#fff;font-family:var(--display);font-weight:700;font-size:.9rem;display:grid;place-items:center}
+:root[data-theme="dark"] ol.steps li::before{color:#0A1222}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) ol.steps li::before{color:#0A1222}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin:0 0 1.4rem}
+.card{border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;background:color-mix(in srgb,var(--paper) 70%,var(--tint))}
+.card h3{margin:0 0 .4rem;font-size:1.05rem}
+.card p{margin:0;font-size:.98rem;color:var(--muted);line-height:1.6}
+.callout{border-left:6px solid var(--hl);background:var(--hl-soft);border-radius:0 12px 12px 0;padding:1rem 1.2rem;margin:1.6rem 0}
+.callout b:first-child{font-family:var(--display)}
+.callout p:last-child{margin-bottom:0}
+.tbl-wrap{overflow-x:auto;margin:0 0 1.4rem;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.98rem}
+th{font-family:var(--display);text-align:left;background:var(--blue);color:#fff;padding:.7rem 1rem}
+:root[data-theme="dark"] th{color:#0A1222}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) th{color:#0A1222}}
+td{padding:.7rem 1rem;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--paper) 60%,var(--tint))}
+figure{margin:1.6rem 0}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.6rem;font-family:var(--display)}
+
+/* pager */
+.pager{position:relative;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:3rem;padding-top:1.4rem;border-top:1px solid var(--line);font-family:var(--display)}
+.pager a{flex:1 1 220px;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:.8rem 1.1rem;background:var(--paper)}
+.pager a:hover{border-color:var(--blue);background:var(--tint)}
+.pager small{display:block;color:var(--muted);font-weight:500}
+.pager a b{font-weight:700}
+.pager a.next{text-align:right}
+.foot{position:relative;margin-top:1.6rem;display:flex;justify-content:space-between;gap:1rem;font-family:var(--display);font-size:.82rem;color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-block;font-family:var(--display);font-weight:700;text-decoration:none;border-radius:999px;padding:.8rem 1.5rem;border:2px solid transparent}
+.btn.primary{background:var(--hl);color:var(--on-hl)}
+.btn.primary:hover{filter:brightness(.95)}
+.btn.ghost{border-color:rgba(255,255,255,.45);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.solid{background:var(--blue);color:#fff}
+:root[data-theme="dark"] .btn.solid{color:#0A1222}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.solid{color:#0A1222}}
+
+/* ---------- Cover ---------- */
+body.is-cover .topbar,body.is-cover .side{display:none}
+body.is-cover main{margin:0;padding:0}
+#sampul.page{max-width:none;border:0;border-radius:0;box-shadow:none;min-height:100svh;background:linear-gradient(140deg,#0A1C45 0%,#12377B 58%,#1F55B0 100%);color:#fff;display:block}
+#sampul.page::before{background:rgba(255,255,255,.055)}
+.cover{position:relative;min-height:100svh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:center;gap:2rem;
+  padding:clamp(2rem,5vw,4.5rem) clamp(1.5rem,5vw,4.5rem) clamp(2rem,5vw,4rem) calc(clamp(1.5rem,5vw,4.5rem) + 34px)}
+.spine{position:absolute;left:0;top:0;bottom:0;width:34px;background:var(--hl);display:grid;place-items:center}
+.spine span{writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--display);font-weight:700;font-size:.85rem;color:#14213D;letter-spacing:.04em}
+.cover h1{font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.02;font-weight:800;margin:0 0 1.1rem;color:#fff}
+.cover .sub{font-family:var(--display);font-size:clamp(1.1rem,2vw,1.5rem);font-weight:500;color:#C9D9F6;max-width:26ch;margin:0 0 2rem;line-height:1.35}
+.cover .by{font-family:var(--display);margin:0 0 2.2rem;padding-left:1rem;border-left:4px solid var(--hl)}
+.cover .by small{display:block;color:#A9BCE0;font-size:.9rem}
+.cover .by b{font-size:1.35rem;font-weight:700;color:#fff}
+.cover .ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.cover figure{margin:0}
+.cover svg{width:100%;height:auto;display:block}
+@media (max-width:900px){
+  .cover{grid-template-columns:1fr;padding-top:2rem}
+  .cover figure{order:2}
+}
+
+/* ---------- Beranda ---------- */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;margin-bottom:2.5rem}
+.hero .win{border-radius:14px;overflow:hidden;box-shadow:0 20px 50px rgba(14,42,90,.25);border:1px solid var(--line);transform:rotate(1.5deg)}
+.hero .win svg{display:block;width:100%;height:auto}
+.hero .row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.chapters{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin:1rem 0 0}
+.chapters a{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.2rem;background:var(--paper)}
+.chapters a:hover{border-color:var(--blue);background:var(--tint)}
+.chapters .no{display:inline-block;font-family:var(--display);font-weight:700;font-size:.85rem;background:var(--hl);color:var(--on-hl);border-radius:6px;padding:.1rem .5rem;margin-bottom:.5rem}
+.chapters h3{margin:0 0 .35rem;font-size:1.08rem}
+.chapters p{margin:0;font-size:.93rem;color:var(--muted);line-height:1.55}
+.author-card{display:flex;gap:1rem;align-items:center;border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem;margin-top:2rem;background:color-mix(in srgb,var(--paper) 70%,var(--tint))}
+.author-card .av{flex:none;width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.3rem}
+:root[data-theme="dark"] .author-card .av{color:#0A1222}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .author-card .av{color:#0A1222}}
+.author-card p{margin:0;line-height:1.45}
+.author-card small{color:var(--muted);font-family:var(--display)}
+
+/* ---------- Kata pengantar ---------- */
+.letter p{text-align:justify;text-indent:2rem;hyphens:auto}
+.sign{margin-top:2.5rem;text-align:right;font-family:var(--display)}
+.sign b{display:block;margin-top:3rem;font-size:1.1rem}
+
+/* ---------- Daftar isi ---------- */
+.toc-list{list-style:none;margin:0;padding:0}
+.toc-item{padding:1rem 0;border-bottom:1px solid var(--line)}
+.toc-row{display:flex;align-items:baseline;gap:.6rem;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:700;font-size:1.15rem}
+.toc-row .no{flex:none;min-width:3.6rem;color:var(--blue);font-weight:700}
+.toc-row .dots{flex:1;border-bottom:2px dotted var(--line);transform:translateY(-4px);min-width:1rem}
+.toc-row .fo{flex:none;color:var(--muted);font-weight:500}
+.toc-row:hover .tt{text-decoration:underline}
+.toc-sub{list-style:none;margin:.5rem 0 0;padding:0 0 0 4.2rem}
+.toc-sub a{display:flex;gap:.6rem;align-items:baseline;text-decoration:none;color:var(--muted);font-size:.98rem;padding:.12rem 0;font-family:var(--display)}
+.toc-sub a:hover{color:var(--ink)}
+.toc-sub .sn{flex:none;min-width:2.4rem;font-weight:700}
+
+/* ---------- Ribbon explorer ---------- */
+.rib{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:1.2rem 0 1.6rem}
+.rib-tabs{display:flex;overflow-x:auto;background:var(--blue);padding:.5rem .5rem 0;gap:2px;-webkit-overflow-scrolling:touch}
+.rib-tabs button{flex:none;border:0;background:transparent;color:#fff;font-family:var(--display);font-weight:600;padding:.55rem 1rem;border-radius:10px 10px 0 0}
+:root[data-theme="dark"] .rib-tabs button{color:#0A1222}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rib-tabs button{color:#0A1222}}
+.rib-tabs button:hover{background:rgba(255,255,255,.18)}
+.rib-tabs button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+.rib-panel{padding:1.2rem 1.4rem .4rem;background:var(--paper)}
+.rib-panel h3{margin-top:0}
+.rib-panel .intro{color:var(--muted)}
+
+/* ---------- Alignment / margin demos ---------- */
+.al{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin:0 0 1.4rem}
+.al div{border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;font-size:.9rem;line-height:1.55;background:var(--paper)}
+.al b{display:block;font-family:var(--display);margin-bottom:.3rem;color:var(--blue)}
+.margin-fig{display:flex;justify-content:center;padding:1.6rem 0 2rem}
+.a4{position:relative;width:min(220px,60vw);aspect-ratio:21/29.7;background:#fff;border:1px solid #B8C4DA;box-shadow:var(--shadow);color:#14213D}
+.a4 .body{position:absolute;top:10.1%;bottom:10.1%;left:19%;right:14.3%;border:1px dashed #2B579A;
+  background:repeating-linear-gradient(to bottom,transparent 0 9px,#D5DBE8 9px 11px)}
+.a4 .m{position:absolute;font-family:var(--display);font-size:.72rem;font-weight:700;background:#FFD84D;border-radius:4px;padding:0 .35rem}
+.a4 .m.t{top:2%;left:50%;transform:translateX(-50%)}
+.a4 .m.b{bottom:2%;left:50%;transform:translateX(-50%)}
+.a4 .m.l{left:2%;top:50%}
+.a4 .m.r{right:1%;top:50%}
+.anatomy svg{width:100%;height:auto;display:block}
+.anatomy text{font-family:var(--display);fill:var(--ink)}
+.anatomy .lbl{font-size:14px;font-weight:700}
+
+@media (max-width:1000px){
+  :root{--side:288px}
+  .topbar{padding-left:1rem}
+  .menu-btn{display:grid}
+  .topbar .tl{display:none}
+  .side{transform:translateX(-102%);transition:transform .25s ease;box-shadow:0 0 40px rgba(0,0,0,.4)}
+  body.nav-open .side{transform:none}
+  body.nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(5,10,25,.55);z-index:35}
+  main{margin-left:0}
+  .hero{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .defs{grid-template-columns:1fr}
+  .defs dt{border-bottom:0;padding-bottom:0}
+  .toc-sub{padding-left:1rem}
+  h2{font-size:1.35rem}
+}
+
+/* ---------- Kenyamanan layar sentuh ---------- */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+a,button,summary{touch-action:manipulation}
+#sampul.page[hidden]{display:none}
+body.is-cover{background:#0A1C45}
+.side{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.topbar{transition:transform .25s ease}
+.topbar.hide{transform:translateY(-100%)}
+.page.enter-next{animation:inR .3s cubic-bezier(.2,.7,.2,1)}
+.page.enter-prev{animation:inL .3s cubic-bezier(.2,.7,.2,1)}
+@keyframes inR{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+@keyframes inL{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+.swipe-hint{display:none;margin:1rem 0 0;font-family:var(--display);font-size:.9rem;color:var(--muted)}
+.rib-tabs{scroll-snap-type:x proximity}
+.rib-tabs button{scroll-snap-align:start}
+
+.bottombar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--paper);border-top:1px solid var(--line);
+  padding:0 .25rem env(safe-area-inset-bottom,0px);grid-template-columns:repeat(5,1fr);font-family:var(--display)}
+.bottombar a,.bottombar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:58px;
+  border:0;background:transparent;text-decoration:none;color:var(--muted);font-size:.72rem;font-weight:600;border-radius:12px}
+.bottombar svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bottombar a:active,.bottombar button:active{background:var(--tint)}
+.bottombar [aria-current="page"]{color:var(--blue)}
+.bottombar [aria-current="page"]::before{content:"";position:absolute;top:0;width:28px;height:3px;border-radius:0 0 3px 3px;background:var(--hl)}
+.bottombar [aria-disabled="true"]{opacity:.35;pointer-events:none}
+body.is-cover .bottombar{display:none!important}
+
+@media (max-width:1000px){
+  body{font-size:1rem;line-height:1.7}
+  body.nav-open{overflow:hidden}
+  .bottombar{display:grid}
+  .topbar{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg)}
+  .icon-btn{width:44px;height:44px}
+  main{padding:64px 0 88px}
+  .page{border-radius:0;border-left:0;border-right:0;box-shadow:none}
+  .sheet{padding:1.25rem 1.1rem 2rem}
+  .running{margin-bottom:1.4rem}
+  .lead{font-size:1.1rem}
+  h2{font-size:1.3rem;margin-top:2.2rem}
+  .side{width:min(86vw,320px)}
+  .side nav a{padding:.8rem .8rem}
+  .toc-row{padding:.2rem 0}
+  .toc-sub a{padding:.4rem 0}
+  .letter p{text-align:left;text-indent:0}
+  .hero .win{transform:none}
+  .btn{padding:.9rem 1.4rem;min-height:48px}
+  .rib-tabs button{min-height:44px}
+  .pager a{padding:1rem 1.1rem}
+  .swipe-hint{display:block}
+  .cover{min-height:calc(100svh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));padding:1.6rem 1.25rem 2rem calc(1.25rem + 26px);gap:1.2rem;align-content:center}
+  #sampul.page{min-height:calc(100svh - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))}
+  .spine{width:26px}
+  .spine span{font-size:.72rem}
+  .cover .ctas .btn{flex:1 1 100%;text-align:center}
+}
+@media (max-width:1000px) and (hover:hover){.swipe-hint{display:none}}
+
+/* ---------- Lembar kerja ---------- */
+:root{--ok:#1B7A43;--bad:#B3261E}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ok:#5CCB8A;--bad:#FF8A80}}
+:root[data-theme="dark"]{--ok:#5CCB8A;--bad:#FF8A80}
+.ws{position:relative;margin-top:3.2rem;border:2px solid var(--blue);border-top:8px solid var(--hl);border-radius:18px;padding:1.4rem 1.4rem 1.5rem;background:color-mix(in srgb,var(--paper) 90%,var(--tint))}
+.ws>h2{margin-top:0}
+.ws-goal{color:var(--muted);margin-bottom:1.2rem}
+.ws-goal b{color:var(--ink)}
+.ws-id{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:0 0 1.2rem}
+.ws-id label,.ws-note{display:block;font-family:var(--display);font-size:.9rem;color:var(--muted)}
+.ws input[type=text],.ws textarea{display:block;width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:10px;padding:.65rem .8rem;margin-top:.3rem}
+.ws textarea{resize:vertical;min-height:96px;line-height:1.5}
+.ws h3{margin-top:1.6rem}
+.ws-tasks{list-style:none;margin:0 0 1rem;padding:0}
+.ws-tasks label{display:flex;gap:.8rem;align-items:flex-start;padding:.75rem .85rem;border:1px solid var(--line);border-radius:12px;margin-bottom:.5rem;background:var(--paper);cursor:pointer;line-height:1.55}
+.ws-tasks input{flex:none;width:1.4rem;height:1.4rem;margin:.12rem 0 0;accent-color:var(--blue)}
+.ws-tasks input:checked+span{color:var(--muted)}
+.ws-meter{display:flex;align-items:center;gap:.8rem;font-family:var(--display);font-size:.9rem;color:var(--muted)}
+.ws-meter .bar{flex:1;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.ws-meter .bar i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s ease}
+.ws-q{border:1px solid var(--line);border-radius:14px;padding:1rem;margin-bottom:.9rem;background:var(--paper)}
+.ws-q .qt{font-weight:600;margin:0 0 .7rem;line-height:1.5}
+.ws-q .opts{display:grid;gap:.5rem}
+.ws-q .opts button{text-align:left;min-height:48px;padding:.65rem .9rem;border-radius:12px;border:1.5px solid var(--line);background:var(--paper);font-family:var(--display);font-weight:500;font-size:.98rem;line-height:1.4}
+.ws-q .opts button:hover:not(:disabled){border-color:var(--blue);background:var(--tint)}
+.ws-q .opts button:disabled{cursor:default;color:var(--ink);opacity:.75}
+.ws-q .opts button.ok{opacity:1;border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper))}
+.ws-q .opts button.ok::before{content:"\2713  ";font-weight:800;color:var(--ok)}
+.ws-q .opts button.no{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 12%,var(--paper))}
+.ws-q .opts button.no::before{content:"\2715  ";font-weight:800;color:var(--bad)}
+.ws-q .fb{margin:.7rem 0 0;font-size:.95rem;line-height:1.55}
+.ws-q .fb:empty{display:none}
+.ws-score{font-family:var(--display);font-size:.9rem;color:var(--muted);margin:.2rem 0 0}
+.ws-actions{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.4rem}
+.btn.outline{background:transparent;border-color:var(--line);color:var(--ink)}
+button.btn{font-size:1rem;line-height:1.2}
+.chapters .ws-badge{display:block;margin-top:.7rem;font-family:var(--display);font-size:.82rem;font-weight:600;color:var(--muted)}
+.chapters .ws-badge.done{color:var(--ok)}
+.side nav a .ck{margin-left:auto;flex:none;font-weight:800;color:#7EE0A5}
+.side nav a[aria-current="page"] .ck{color:#1B7A43}
+@media (max-width:560px){
+  .ws{padding:1.1rem .9rem 1.2rem;border-radius:14px}
+  .ws-id{grid-template-columns:1fr}
+  .ws-actions .btn{flex:1 1 100%;text-align:center}
+}
+
+@media print{.topbar,.side,.pager,.scrim{display:none!important}main{margin:0;padding:0}.page{display:block!important;box-shadow:none;border:0;page-break-after:always}}
+</style>
+</head>
+<body class="is-cover">
+
+<!-- Shared drawing: tampilan Word yang dipakai berulang -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="wordui" viewBox="0 0 230 150">
+      <rect width="230" height="150" fill="#E4E8F0"/>
+      <rect width="230" height="15" fill="#2B579A"/>
+      <rect x="5" y="3" width="9" height="9" rx="2" fill="#fff"/>
+      <text x="6.4" y="10.6" font-size="8" font-weight="800" fill="#2B579A" font-family="Arial,sans-serif">W</text>
+      <rect x="70" y="4.5" width="90" height="6" rx="3" fill="#fff" opacity=".28"/>
+      <rect y="15" width="230" height="13" fill="#F7F8FB"/>
+      <rect x="8" y="20" width="18" height="3" rx="1.5" fill="#2B579A"/><rect x="8" y="25" width="18" height="2" fill="#2B579A"/>
+      <rect x="34" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/><rect x="60" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/>
+      <rect x="86" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/><rect x="112" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/>
+      <rect x="138" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/><rect x="164" y="21" width="18" height="3" rx="1.5" fill="#9AA6BE"/>
+      <rect y="28" width="230" height="26" fill="#EEF1F7"/>
+      <rect x="8" y="32" width="42" height="18" rx="3" fill="#fff" stroke="#D5DBE8"/><rect x="13" y="36" width="12" height="10" rx="2" fill="#2B579A"/><rect x="29" y="37" width="16" height="3" fill="#C5CCDA"/><rect x="29" y="43" width="12" height="3" fill="#C5CCDA"/>
+      <rect x="56" y="32" width="58" height="18" rx="3" fill="#fff" stroke="#D5DBE8"/><rect x="61" y="37" width="24" height="4" fill="#C5CCDA"/><rect x="61" y="44" width="46" height="3" fill="#C5CCDA"/>
+      <rect x="120" y="32" width="46" height="18" rx="3" fill="#fff" stroke="#D5DBE8"/><rect x="125" y="37" width="36" height="3" fill="#C5CCDA"/><rect x="125" y="44" width="28" height="3" fill="#C5CCDA"/>
+      <rect x="172" y="32" width="50" height="18" rx="3" fill="#fff" stroke="#D5DBE8"/><rect x="177" y="37" width="14" height="9" rx="2" fill="#FFD84D"/><rect x="195" y="38" width="22" height="3" fill="#C5CCDA"/>
+      <rect x="40" y="60" width="150" height="90" fill="#fff"/>
+      <rect x="52" y="70" width="78" height="8" rx="2" fill="#2B579A"/>
+      <rect x="52" y="86" width="126" height="3" fill="#C5CCDA"/><rect x="52" y="93" width="118" height="3" fill="#C5CCDA"/>
+      <rect x="52" y="100" width="126" height="3" fill="#C5CCDA"/>
+      <rect x="52" y="106" width="64" height="6" rx="1" fill="#FFD84D"/><rect x="52" y="107.5" width="64" height="3" fill="#8E7A1A" opacity=".55"/>
+      <rect x="52" y="116" width="100" height="3" fill="#C5CCDA"/><rect x="52" y="123" width="126" height="3" fill="#C5CCDA"/>
+      <rect x="52" y="130" width="90" height="3" fill="#C5CCDA"/><rect x="116" y="104" width="1.5" height="10" fill="#2B579A"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="topbar" id="topbar">
+  <button class="icon-btn menu-btn" id="menuBtn" aria-label="Buka menu buku" aria-expanded="false" aria-controls="side">
+    <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <a class="brand" href="#/beranda">Mahir Microsoft Word</a>
+  <a class="tl" href="#/beranda" data-for="beranda">Beranda</a>
+  <a class="tl" href="#/kata-pengantar" data-for="kata-pengantar">Kata Pengantar</a>
+  <a class="tl" href="#/daftar-isi" data-for="daftar-isi">Daftar Isi</a>
+  <button class="icon-btn" id="themeBtn" aria-label="Ganti tema terang atau gelap">
+    <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+</header>
+<div id="progress" aria-hidden="true"></div>
+
+<aside class="side" id="side" aria-label="Navigasi buku">
+  <a class="logo" href="#/beranda"><b>W</b><span>Mahir Microsoft Word<small>Buku panduan praktis</small></span></a>
+  <nav id="nav" aria-label="Daftar halaman"></nav>
+  <div class="who"><small>Disusun oleh</small><b>Adho Ughy Baco Kuttu</b></div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<nav class="bottombar" id="bottombar" aria-label="Navigasi cepat">
+  <a id="bbPrev" href="#/beranda"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg><span>Kembali</span></a>
+  <a id="bbHome" href="#/beranda"><svg viewBox="0 0 24 24"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-4v-6H9v6H5a1 1 0 0 1-1-1z"/></svg><span>Beranda</span></a>
+  <a id="bbToc" href="#/daftar-isi"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg><span>Daftar Isi</span></a>
+  <button id="bbMenu" type="button" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg><span>Bab</span></button>
+  <a id="bbNext" href="#/beranda"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg><span>Lanjut</span></a>
+</nav>
+
+
+<main id="main">
+
+<!-- ================= SAMPUL ================= -->
+<section class="page" id="sampul" data-nav="Sampul" data-type="front" data-wm="Mahir Microsoft Word">
+  <div class="cover">
+    <div class="spine" aria-hidden="true"><span>Adho Ughy Baco Kuttu</span></div>
+    <div class="cover-text" style="position:relative">
+      <h1>Mahir Microsoft Word</h1>
+      <p class="sub">Panduan Praktis dari Dasar hingga Dokumen Profesional</p>
+      <p class="by"><small>Disusun oleh</small><b>Adho Ughy Baco Kuttu</b></p>
+      <div class="ctas">
+        <a class="btn primary" href="#/beranda">Buka buku</a>
+        <a class="btn ghost" href="#/daftar-isi">Lihat daftar isi</a>
+      </div>
+    </div>
+    <figure style="position:relative">
+      <svg viewBox="0 0 720 440" role="img" aria-label="Ilustrasi seseorang mengetik di laptop Windows dengan Microsoft Word, ditemani sebuah MacBook yang juga menampilkan Word">
+        <circle cx="390" cy="230" r="205" fill="#fff" opacity=".06"/>
+        <circle cx="390" cy="230" r="145" fill="#fff" opacity=".06"/>
+        <!-- floating chips -->
+        <g transform="rotate(-9 300 90)"><rect x="268" y="56" width="66" height="66" rx="16" fill="#2B579A" stroke="#fff" stroke-opacity=".5" stroke-width="2"/>
+          <text x="301" y="103" text-anchor="middle" font-family="Arial,sans-serif" font-size="40" font-weight="800" fill="#fff">W</text></g>
+        <g><rect x="380" y="62" width="96" height="34" rx="10" fill="#fff"/>
+          <text x="428" y="84" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#14213D">Ctrl + S</text></g>
+        <g><rect x="500" y="108" width="92" height="34" rx="10" fill="#FFD84D"/>
+          <text x="546" y="130" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="800" fill="#14213D">B  <tspan font-style="italic">I</tspan>  <tspan text-decoration="underline">U</tspan></text></g>
+        <g><rect x="120" y="96" width="112" height="34" rx="10" fill="#fff" opacity=".95"/>
+          <text x="176" y="118" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#2B579A">Ctrl + Z</text></g>
+        <!-- chair -->
+        <rect x="36" y="252" width="18" height="112" rx="9" fill="#3A5A98"/>
+        <!-- torso -->
+        <path d="M78 360 C72 302 84 262 112 240 L152 240 C172 262 168 322 160 360 Z" fill="#7FA6E8"/>
+        <path d="M112 240 L134 262 L152 240 Z" fill="#EAF0FB"/>
+        <!-- Windows laptop -->
+        <rect x="232" y="150" width="252" height="172" rx="11" fill="#151B2B"/>
+        <use href="#wordui" x="243" y="161" width="230" height="150"/>
+        <path d="M212 322 L504 322 L524 352 L192 352 Z" fill="#AEBBD6"/>
+        <rect x="212" y="320" width="292" height="4" fill="#8C9AB9"/>
+        <rect x="236" y="328" width="244" height="5" rx="2" fill="#95A3C2"/>
+        <rect x="326" y="338" width="68" height="10" rx="3" fill="#9BAAC9"/>
+        <!-- MacBook -->
+        <rect x="540" y="230" width="164" height="110" rx="9" fill="#C6CEDC"/>
+        <rect x="545" y="235" width="154" height="100" rx="5" fill="#0D1322"/>
+        <use href="#wordui" x="548" y="238" width="148" height="94"/>
+        <rect x="526" y="340" width="192" height="12" rx="6" fill="#D9DFEA"/>
+        <rect x="596" y="340" width="52" height="4" rx="2" fill="#B5BFD2"/>
+        <!-- head -->
+        <rect x="118" y="212" width="17" height="32" rx="6" fill="#E5B48E"/>
+        <ellipse cx="134" cy="190" rx="25" ry="28" fill="#F0C6A0"/>
+        <circle cx="121" cy="197" r="6" fill="#E5B48E"/>
+        <path d="M104 196 C96 156 134 146 158 168 C142 166 126 172 122 198 Z" fill="#1E2433"/>
+        <circle cx="150" cy="191" r="7" fill="none" stroke="#1E2433" stroke-width="2"/>
+        <circle cx="150" cy="191" r="2.4" fill="#1E2433"/>
+        <path d="M158 194 l6 9 l-6 0" fill="none" stroke="#D39B72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M147 210 q7 4 13 0" fill="none" stroke="#B5704F" stroke-width="2" stroke-linecap="round"/>
+        <!-- desk -->
+        <rect x="0" y="352" width="720" height="14" rx="4" fill="#C9D8F2"/>
+        <rect x="0" y="366" width="720" height="74" fill="#081634"/>
+        <!-- legs -->
+        <path d="M104 372 L214 372 L214 392 L104 392 Z" fill="#23407A" rx="8"/>
+        <rect x="196" y="372" width="20" height="58" fill="#23407A"/>
+        <path d="M190 430 L250 430 Q256 430 256 424 L256 418 L196 418 Z" fill="#E8EEF9"/>
+        <!-- arm + hand -->
+        <path d="M132 264 L170 306 L232 330" fill="none" stroke="#6E97DD" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="240" cy="331" r="11" fill="#F0C6A0"/>
+        <path d="M122 218 l0 0" stroke="none"/>
+      </svg>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= BERANDA ================= -->
+<section class="page" id="beranda" data-nav="Beranda" data-type="front" data-wm="Beranda">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span>Beranda</span></div>
+    <div class="hero">
+      <div>
+        <span class="chip">Buku panduan untuk pemula</span>
+        <h1>Selamat datang di Mahir Microsoft Word</h1>
+        <p class="lead">Belajar Word langkah demi langkah, mulai dari membuka aplikasi sampai mencetak dokumen yang rapi dan profesional.</p>
+        <div class="row">
+          <a class="btn solid" href="#/bab-1">Mulai membaca</a>
+          <a class="btn" style="border-color:var(--line);color:var(--ink)" href="#/daftar-isi">Daftar isi</a>
+          <a class="btn" style="border-color:var(--line);color:var(--ink)" href="#/kata-pengantar">Kata pengantar</a>
+        </div>
+        <p class="swipe-hint">Geser layar ke kiri atau kanan untuk pindah halaman.</p>
+      </div>
+      <div class="win" aria-hidden="true"><svg viewBox="0 0 230 150"><use href="#wordui" width="230" height="150"/></svg></div>
+    </div>
+
+    <h2 style="margin-top:1rem">Delapan bab dalam satu buku</h2>
+    <p>Setiap bab ditutup dengan lembar kerja: praktik langsung di Word, cek pemahaman, dan tantangan. Kemajuan Anda tersimpan di perangkat ini.</p>
+    <div class="chapters" id="chapterGrid"></div>
+
+    <div class="author-card">
+      <div class="av" aria-hidden="true">A</div>
+      <p><small>Penyusun</small><br><b style="font-family:var(--display)">Adho Ughy Baco Kuttu</b></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KATA PENGANTAR ================= -->
+<section class="page" id="kata-pengantar" data-nav="Kata Pengantar" data-type="front" data-wm="Kata Pengantar" data-folio="i">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span>Halaman i</span></div>
+    <span class="chip">Bagian awal</span>
+    <h1>Kata Pengantar</h1>
+    <div class="letter">
+      <p>Microsoft Word adalah salah satu aplikasi pengolah kata yang paling sering dipakai di sekolah, kampus, dan perkantoran. Surat, laporan, makalah, hingga buku dapat disusun dengannya. Namun, banyak pengguna baru yang baru memakai sebagian kecil dari kemampuan Word, sehingga dokumen yang dihasilkan kurang rapi dan memakan waktu lebih lama untuk dikerjakan.</p>
+      <p>Buku ini disusun untuk membantu pembaca memulai perjalanan bersama Microsoft Word dengan cara yang mudah dipahami. Setiap pembahasan disajikan secara runtut dan disertai langkah praktis, sehingga pembaca dapat langsung mencobanya di komputer masing-masing. Setiap bab ditutup dengan lembar kerja yang berisi latihan praktik, pertanyaan pemahaman, dan satu tantangan. Meskipun ditujukan bagi pemula, isinya tetap mengarah pada hasil dokumen yang terlihat profesional.</p>
+      <p>Pembahasan dimulai dari cara membuka Word dan mengenal tampilan utamanya pada Bab 1. Bab 2 membedah menu Ribbon dari tab File hingga Design. Bab 3 membahas langkah awal mengetik yang benar, disusul pengaturan huruf dan paragraf pada Bab 4. Bab 5 mengajak pembaca membuat dan mengelola tabel, sedangkan Bab 6 membahas gambar, bentuk, dan ikon. Bab 7 menjelaskan tata letak halaman, dan Bab 8 menutup dengan cara menyimpan serta mencetak dokumen.</p>
+      <p>Penyusun berharap buku ini dapat menjadi teman belajar yang bermanfaat bagi siapa pun yang ingin bekerja lebih cepat, lebih rapi, dan lebih percaya diri dengan Microsoft Word. Saran dan kritik yang membangun sangat penyusun harapkan demi penyempurnaan buku ini di masa mendatang.</p>
+    </div>
+    <div class="sign"><span>Penyusun,</span><b>Adho Ughy Baco Kuttu</b></div>
+  </div>
+</section>
+
+<!-- ================= DAFTAR ISI ================= -->
+<section class="page" id="daftar-isi" data-nav="Daftar Isi" data-type="front" data-wm="Daftar Isi" data-folio="ii">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span>Halaman ii</span></div>
+    <span class="chip">Navigasi</span>
+    <h1>Daftar Isi</h1>
+    <p class="lead" style="margin-bottom:1.5rem">Pilih judul bab atau subbab untuk langsung menuju halamannya.</p>
+    <ul class="toc-list" id="tocList"></ul>
+  </div>
+</section>
+
+<!-- ================= BAB 1 ================= -->
+<section class="page" id="bab-1" data-nav="Mengenal Microsoft Word" data-type="bab" data-wm="Mengenal Microsoft Word">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Mengenal Microsoft Word</h1>
+    <p class="lead">Panduan lengkap untuk memulai perjalanan Anda dengan Microsoft Word, dirancang agar mudah dipahami bagi pemula namun tetap terlihat profesional.</p>
+
+    <h2>Cara Membuka Microsoft Word</h2>
+    <p>Ada beberapa cara cepat untuk mengakses aplikasi ini di Windows.</p>
+    <div class="cards">
+      <div class="card"><h3>Melalui Menu Start</h3><p>Klik ikon <b>Start</b> (logo Windows), ketik “Word”, lalu tekan <kbd>Enter</kbd>.</p></div>
+      <div class="card"><h3>Melalui Shortcut Desktop</h3><p>Klik dua kali pada ikon Microsoft Word jika tersedia di layar utama.</p></div>
+      <div class="card"><h3>Melalui Pin Taskbar</h3><p>Jika sering digunakan, klik kanan ikon Word saat terbuka dan pilih <b>Pin to Taskbar</b> agar selalu muncul di baris bawah layar.</p></div>
+    </div>
+
+    <h2>Memulai Dokumen Baru</h2>
+    <p>Saat pertama kali terbuka, Anda akan dihadapkan pada layar <b>Start Screen</b>.</p>
+    <dl class="defs">
+      <dt>Blank Document</dt><dd>Pilih ini untuk memulai dari kertas putih kosong.</dd>
+      <dt>Templates</dt><dd>Word menyediakan desain instan seperti Resume, Brosur, atau Laporan yang bisa langsung diedit.</dd>
+      <dt>Recent Documents</dt><dd>Di sisi kiri, Anda akan melihat daftar file yang terakhir kali Anda buka untuk melanjutkan pekerjaan dengan cepat.</dd>
+    </dl>
+
+    <h2>Mengenal Tampilan Utama (Antarmuka)</h2>
+    <p>Memahami bagian-bagian Word akan mempercepat kerja Anda. Berikut adalah komponen kuncinya.</p>
+    <figure class="anatomy">
+      <svg viewBox="0 0 740 380" role="img" aria-label="Diagram bagian-bagian jendela Microsoft Word: Quick Access Toolbar, Ribbon, Ruler, Area Kerja, dan Status Bar">
+        <rect x="10" y="10" width="470" height="360" rx="8" fill="#E4E8F0" stroke="#B8C4DA"/>
+        <path d="M10 18a8 8 0 0 1 8-8h454a8 8 0 0 1 8 8v18H10z" fill="#2B579A"/>
+        <rect x="20" y="17" width="12" height="12" rx="2" fill="#fff" opacity=".9"/><rect x="38" y="17" width="12" height="12" rx="2" fill="#fff" opacity=".6"/><rect x="56" y="17" width="12" height="12" rx="2" fill="#fff" opacity=".6"/>
+        <rect x="190" y="19" width="110" height="8" rx="4" fill="#fff" opacity=".3"/>
+        <rect x="10" y="36" width="470" height="20" fill="#F7F8FB"/>
+        <rect x="20" y="43" width="26" height="5" rx="2" fill="#9AA6BE"/><rect x="58" y="43" width="26" height="5" rx="2" fill="#2B579A"/><rect x="96" y="43" width="26" height="5" rx="2" fill="#9AA6BE"/><rect x="134" y="43" width="26" height="5" rx="2" fill="#9AA6BE"/><rect x="172" y="43" width="26" height="5" rx="2" fill="#9AA6BE"/>
+        <rect x="10" y="56" width="470" height="54" fill="#EEF1F7"/>
+        <rect x="20" y="62" width="80" height="42" rx="4" fill="#fff" stroke="#D5DBE8"/><rect x="110" y="62" width="110" height="42" rx="4" fill="#fff" stroke="#D5DBE8"/><rect x="230" y="62" width="100" height="42" rx="4" fill="#fff" stroke="#D5DBE8"/><rect x="340" y="62" width="130" height="42" rx="4" fill="#fff" stroke="#D5DBE8"/>
+        <rect x="10" y="110" width="470" height="12" fill="#DDE3EE"/>
+        <g stroke="#9AA6BE" stroke-width="1"><path d="M70 110v6M100 110v6M130 110v6M160 110v6M190 110v6M220 110v6M250 110v6M280 110v6M310 110v6M340 110v6M370 110v6M400 110v6M430 110v6"/></g>
+        <rect x="10" y="122" width="14" height="222" fill="#DDE3EE"/>
+        <rect x="24" y="122" width="456" height="222" fill="#D2D8E4"/>
+        <rect x="60" y="130" width="380" height="214" fill="#fff"/>
+        <rect x="90" y="150" width="150" height="12" rx="3" fill="#2B579A"/>
+        <g fill="#C5CCDA"><rect x="90" y="178" width="320" height="4"/><rect x="90" y="190" width="300" height="4"/><rect x="90" y="202" width="320" height="4"/><rect x="90" y="214" width="260" height="4"/><rect x="90" y="238" width="320" height="4"/><rect x="90" y="250" width="290" height="4"/></g>
+        <rect x="10" y="344" width="470" height="26" rx="0" fill="#2B579A"/>
+        <path d="M10 362a8 8 0 0 0 8 8h454a8 8 0 0 0 8-8v-18H10z" fill="#2B579A"/>
+        <rect x="20" y="353" width="50" height="6" rx="3" fill="#fff" opacity=".8"/><rect x="82" y="353" width="60" height="6" rx="3" fill="#fff" opacity=".8"/>
+        <rect x="330" y="353" width="40" height="6" rx="3" fill="#fff" opacity=".6"/><rect x="380" y="356" width="90" height="1.5" fill="#fff"/><circle cx="420" cy="356.5" r="4" fill="#FFD84D"/>
+        <g stroke="var(--blue)" stroke-width="1.5" fill="none">
+          <path d="M60 23H512"/><path d="M440 83H512"/><path d="M440 116H512"/><path d="M400 232H512"/><path d="M440 357H512"/>
+        </g>
+        <g fill="var(--blue)"><circle cx="60" cy="23" r="4"/><circle cx="440" cy="83" r="4"/><circle cx="440" cy="116" r="4"/><circle cx="400" cy="232" r="4"/><circle cx="440" cy="357" r="4"/></g>
+        <g class="lbl"><text x="522" y="28">Quick Access Toolbar</text><text x="522" y="88">Ribbon</text><text x="522" y="121">Ruler (Penggaris)</text><text x="522" y="237">Area Kerja</text><text x="522" y="362">Status Bar</text></g>
+      </svg>
+      <figcaption>Bagian-bagian utama jendela Microsoft Word.</figcaption>
+    </figure>
+
+    <h3>Quick Access Toolbar (pojok kiri atas)</h3>
+    <p>Berisi ikon untuk perintah cepat yang sering digunakan, seperti Save (Simpan), Undo (membatalkan perintah), dan Redo.</p>
+    <h3>Ribbon (bagian atas)</h3>
+    <p>Pusat kendali utama yang terbagi menjadi beberapa tab:</p>
+    <dl class="defs">
+      <dt>File</dt><dd>Mengatur dokumen (Save, Print, Share).</dd>
+      <dt>Home</dt><dd>Mengatur teks (font, ukuran, warna, paragraf).</dd>
+      <dt>Insert</dt><dd>Menambah gambar, tabel, atau nomor halaman.</dd>
+      <dt>Layout</dt><dd>Mengatur ukuran kertas, margin (batas tepi), dan orientasi (Potret/Lanskap).</dd>
+    </dl>
+    <h3>Ruler (Penggaris)</h3>
+    <p>Berada di atas dan samping kiri area kerja. Berguna untuk mengatur indentasi paragraf dan merapikan posisi teks atau gambar secara presisi.</p>
+    <h3>Area Kerja (Halaman)</h3>
+    <p>Bagian tengah yang menyerupai kertas putih. Di sinilah Anda mengetik dan menyusun konten.</p>
+    <h3>Status Bar (baris bawah)</h3>
+    <p>Memberikan informasi real-time tentang dokumen Anda:</p>
+    <dl class="defs">
+      <dt>Page Number</dt><dd>Menunjukkan halaman berapa Anda berada.</dd>
+      <dt>Word Count</dt><dd>Menghitung jumlah kata yang sudah diketik.</dd>
+      <dt>View Buttons</dt><dd>Mengubah tampilan (Read Mode, Print Layout, atau Web Layout).</dd>
+      <dt>Zoom Slider</dt><dd>Mengatur besar kecilnya tampilan kertas (geser ke + atau −).</dd>
+    </dl>
+
+    <h2>Langkah Dasar Setelah Mengetik</h2>
+    <p>Agar dokumen Anda aman dan rapi, biasakan melakukan hal berikut.</p>
+    <dl class="defs">
+      <dt>Menyimpan file (Save)</dt><dd>Tekan <kbd>Ctrl</kbd> + <kbd>S</kbd>, pilih folder penyimpanan, dan beri nama file yang jelas.</dd>
+      <dt>Mengatur jenis huruf</dt><dd>Gunakan menu di tab <b>Home</b>. Standar profesional biasanya menggunakan <i>Times New Roman</i> (ukuran 12) atau <i>Arial</i> (ukuran 11).</dd>
+      <dt>Mengatur jarak spasi</dt><dd>Klik ikon <b>Line and Paragraph Spacing</b> di tab Home agar tulisan tidak terlalu rapat dan nyaman dibaca.</dd>
+    </dl>
+    <div class="callout"><b>Tips cepat.</b> Gunakan kombinasi <kbd>Ctrl</kbd> + <kbd>N</kbd> untuk membuat dokumen baru secara instan, dan <kbd>Ctrl</kbd> + <kbd>P</kbd> jika Anda ingin mencetak (print) hasil kerja Anda.</div>
+  </div>
+</section>
+
+<!-- ================= BAB 2 ================= -->
+<section class="page" id="bab-2" data-nav="Menjelajahi Ribbon dan Menu Utama" data-type="bab" data-wm="Menjelajahi Ribbon dan Menu Utama">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Menjelajahi Ribbon dan Menu Utama</h1>
+    <p class="lead">Untuk menguasai Microsoft Word, memahami Ribbon Toolbar adalah kunci utama. Ribbon adalah barisan menu di bagian atas yang mengelompokkan fitur berdasarkan fungsinya.</p>
+
+    <h2>Bedah Tuntas Setiap Tab Menu</h2>
+    <p>Pilih salah satu tab di bawah ini untuk melihat fungsi setiap kelompok perintahnya.</p>
+    <div class="rib" id="ribbon">
+      <div class="rib-tabs" role="tablist" aria-label="Tab menu Microsoft Word"></div>
+      <div class="rib-panel" role="tabpanel" tabindex="0"></div>
+    </div>
+    <div class="callout"><b>Ingat.</b> Menu <b>File</b> adalah satu-satunya menu yang membuka tampilan penuh (Backstage View). Tab lain hanya menampilkan barisan ikon di bagian atas layar.</div>
+  </div>
+</section>
+
+<!-- ================= BAB 3 ================= -->
+<section class="page" id="bab-3" data-nav="Langkah Awal Mengetik Dokumen" data-type="bab" data-wm="Langkah Awal Mengetik Dokumen">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Langkah Awal Mengetik Dokumen</h1>
+    <p class="lead">Setelah memahami tampilan menu, saatnya menuangkan tulisan ke dalam lembar kerja. Agar dokumen tidak berantakan di kemudian hari, ikuti langkah-langkah teknis berikut.</p>
+
+    <h2>Tahap Persiapan Halaman</h2>
+    <p>Sebelum mengetik sepatah kata pun, atur “wadah” tulisan Anda agar sesuai dengan standar dokumen seperti A4.</p>
+    <ol class="steps">
+      <li><b>Atur ukuran kertas.</b> Klik tab <b>Layout</b> &gt; <b>Size</b> &gt; pilih <b>A4</b> (atau ukuran lain yang diinginkan).</li>
+      <li><b>Atur margin (batas tepi).</b> Klik tab <b>Layout</b> &gt; <b>Margins</b> &gt; <b>Custom Margins</b>.</li>
+      <li><b>Pilih jenis font.</b> Kembali ke tab <b>Home</b>, pilih font yang profesional (misalnya <i>Times New Roman</i> atau <i>Arial</i>) dan ukuran standar <b>12</b>.</li>
+    </ol>
+    <figure class="margin-fig">
+      <div class="a4" role="img" aria-label="Kertas A4 dengan margin atas 3 cm, bawah 3 cm, kiri 4 cm, dan kanan 3 cm">
+        <div class="body"></div>
+        <span class="m t">Atas 3 cm</span><span class="m b">Bawah 3 cm</span><span class="m l">Kiri 4</span><span class="m r">Kanan 3</span>
+      </div>
+    </figure>
+    <p style="text-align:center;margin-top:-1rem;color:var(--muted)">Standar umum margin: Atas 3 cm, Bawah 3 cm, Kiri 4 cm, Kanan 3 cm.</p>
+
+    <h2>Teknik Mengetik yang Benar</h2>
+    <p>Dalam Word, ada beberapa aturan “tak tertulis” agar format dokumen Anda konsisten.</p>
+    <dl class="defs">
+      <dt>Gunakan Enter seperlunya</dt><dd>Jangan menekan Enter di setiap akhir baris. Word akan otomatis memindahkan kata ke baris bawah jika sudah mentok ke kanan. Gunakan Enter <b>hanya</b> saat Anda ingin memulai paragraf baru.</dd>
+      <dt>Gunakan Tab untuk menjorok</dt><dd>Untuk memulai kalimat pertama yang masuk ke dalam pada sebuah paragraf, tekan tombol <kbd>Tab</kbd> satu kali. Jangan menggunakan spasi berulang kali.</dd>
+      <dt>Satu spasi setelah titik</dt><dd>Setelah tanda titik (.) atau koma (,), berikan <b>satu kali spasi</b> sebelum memulai kata berikutnya.</dd>
+    </dl>
+
+    <h2>Mengatur Perataan Teks (Alignment)</h2>
+    <p>Agar dokumen terlihat estetik, gunakan fitur perataan di tab <b>Home</b> pada grup <b>Paragraph</b>.</p>
+    <div class="al" aria-hidden="true">
+      <div style="text-align:left"><b>Align Left</b>Contoh teks yang diratakan ke sisi kiri halaman untuk surat atau laporan.</div>
+      <div style="text-align:center"><b>Center</b>Contoh teks yang diratakan ke tengah untuk judul.</div>
+      <div style="text-align:right"><b>Align Right</b>Contoh teks rata kanan untuk tanggal surat atau tanda tangan.</div>
+      <div style="text-align:justify"><b>Justify</b>Contoh teks rata kiri-kanan yang membuat tulisan tampak kotak, rapi, dan profesional di kedua sisinya.</div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Nama</th><th>Fungsi</th></tr></thead>
+      <tbody>
+        <tr><td><b>Align Left</b></td><td>Rata kiri (standar untuk surat/laporan).</td></tr>
+        <tr><td><b>Center</b></td><td>Rata tengah (khusus untuk judul).</td></tr>
+        <tr><td><b>Align Right</b></td><td>Rata kanan (biasanya untuk tanggal surat atau tanda tangan).</td></tr>
+        <tr><td><b>Justify</b></td><td>Rata kiri-kanan (membuat tulisan tampak kotak rapi dan profesional).</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Cara Mengoreksi dan Memindah Teks</h2>
+    <p>Jika ada kesalahan ketik, jangan panik. Gunakan metode berikut.</p>
+    <dl class="defs">
+      <dt>Backspace</dt><dd>Menghapus karakter di <b>kiri</b> kursor.</dd>
+      <dt>Delete</dt><dd>Menghapus karakter di <b>kanan</b> kursor.</dd>
+      <dt>Memblok teks</dt><dd>Klik kiri dan tahan, lalu geser mouse di atas kata yang ingin diubah. Setelah terpilih (berwarna biru), Anda bisa langsung mengganti warna, menebalkannya, atau menghapusnya.</dd>
+      <dt>Undo</dt><dd>Tekan <kbd>Ctrl</kbd> + <kbd>Z</kbd> jika Anda tidak sengaja menghapus sesuatu yang penting.</dd>
+    </dl>
+
+    <h2>Mengatur Jarak Baris (Line Spacing)</h2>
+    <p>Agar tulisan tidak terlalu rapat dan lelah dibaca:</p>
+    <ol class="steps">
+      <li>Blok tulisan Anda (atau tekan <kbd>Ctrl</kbd> + <kbd>A</kbd> untuk semua tulisan).</li>
+      <li>Di tab <b>Home</b>, klik ikon <b>Line and Paragraph Spacing</b> (ikon garis dengan panah atas-bawah).</li>
+      <li>Pilih angka <b>1.15</b> atau <b>1.5</b> untuk jarak yang paling nyaman dibaca.</li>
+    </ol>
+
+    <h2>Menyimpan Hasil Kerja (Save)</h2>
+    <p>Jangan menunggu tulisan selesai baru disimpan. Lakukan ini sesegera mungkin:</p>
+    <ol class="steps">
+      <li>Klik <b>File</b> &gt; <b>Save</b>.</li>
+      <li>Pilih lokasi (misalnya <i>Documents</i>).</li>
+      <li>Beri nama file yang spesifik.</li>
+      <li>Klik <b>Save</b>.</li>
+    </ol>
+    <p>Sambil mengetik, tekan <kbd>Ctrl</kbd> + <kbd>S</kbd> secara berkala setiap beberapa menit untuk memastikan progres Anda aman jika komputer tiba-tiba mati.</p>
+    <div class="callout"><b>Saran tambahan.</b> Untuk judul, gunakan fitur <b>Bold</b> (B) agar terlihat menonjol. Jika ada istilah asing (bahasa Inggris atau bahasa daerah), gunakan fitur <i>Italic</i> (I) untuk memiringkan kata tersebut.</div>
+  </div>
+</section>
+
+<!-- ================= BAB 4 ================= -->
+<section class="page" id="bab-4" data-nav="Mengatur Huruf dan Paragraf" data-type="bab" data-wm="Mengatur Huruf dan Paragraf">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Mengatur Huruf dan Paragraf</h1>
+    <p class="lead">Mengatur huruf dan paragraf adalah inti dari pembuatan dokumen yang rapi dan profesional. Di Microsoft Word, hampir semua pengaturan ini berada di tab Home.</p>
+
+    <h2>Pengaturan Huruf (Grup Font)</h2>
+    <p>Grup ini berfungsi untuk mengubah tampilan estetika dari karakter atau kata yang Anda ketik.</p>
+    <dl class="defs">
+      <dt>Jenis Huruf (Font Face)</dt><dd>Klik kotak nama font (misalnya <i>Calibri</i>) untuk memilih gaya tulisan. Gunakan <b>Times New Roman</b> untuk dokumen resmi atau <b>Arial</b> untuk tampilan modern.</dd>
+      <dt>Ukuran Huruf (Font Size)</dt><dd>Klik angka di samping jenis huruf. Anda juga bisa menggunakan ikon <b>A besar</b> untuk memperbesar dan <b>A kecil</b> untuk memperkecil secara bertahap.</dd>
+      <dt>Bold (B)</dt><dd>Menebalkan teks. Tombol cepat: <kbd>Ctrl</kbd> + <kbd>B</kbd>.</dd>
+      <dt>Italic (I)</dt><dd>Memiringkan teks. Tombol cepat: <kbd>Ctrl</kbd> + <kbd>I</kbd>.</dd>
+      <dt>Underline (U)</dt><dd>Memberi garis bawah. Tombol cepat: <kbd>Ctrl</kbd> + <kbd>U</kbd>.</dd>
+      <dt>Change Case (Aa)</dt><dd>Mengubah teks menjadi huruf besar semua, huruf kecil semua, atau huruf besar di awal kata tanpa mengetik ulang.</dd>
+      <dt>Font Color</dt><dd>Klik ikon huruf <b>A</b> dengan garis bawah warna untuk mengubah warna teks.</dd>
+      <dt>Text Highlight Color</dt><dd>Memberi efek stabilo pada teks penting.</dd>
+    </dl>
+
+    <h2>Pengaturan Paragraf (Grup Paragraph)</h2>
+    <p>Grup ini mengatur bagaimana teks disusun dalam satu blok atau halaman.</p>
+    <h3>Perataan teks (Alignment)</h3>
+    <dl class="defs">
+      <dt>Align Left</dt><dd>Rata kiri (standar surat).</dd>
+      <dt>Center</dt><dd>Rata tengah (untuk judul).</dd>
+      <dt>Align Right</dt><dd>Rata kanan (untuk tanggal atau tanda tangan).</dd>
+      <dt>Justify</dt><dd>Rata kiri-kanan (membuat dokumen terlihat sangat rapi di kedua sisi).</dd>
+    </dl>
+    <h3>Jarak baris dan paragraf (Line Spacing)</h3>
+    <ul class="plain">
+      <li>Klik ikon garis dengan panah atas-bawah (<b>Line and Paragraph Spacing</b>).</li>
+      <li>Pilih angka spasi (1.0, 1.15, 1.5, atau 2.0).</li>
+      <li><b>Remove Space After Paragraph:</b> gunakan ini jika antar paragraf terasa terlalu renggang atau jauh.</li>
+    </ul>
+    <h3>List (daftar berpoin)</h3>
+    <dl class="defs">
+      <dt>Bullets</dt><dd>Menggunakan simbol (titik, centang, dll) untuk daftar acak.</dd>
+      <dt>Numbering</dt><dd>Menggunakan angka atau huruf untuk daftar yang berurutan.</dd>
+      <dt>Multilevel List</dt><dd>Digunakan untuk membuat sub-bab (contoh: 1., 1.1, 1.1.1).</dd>
+    </dl>
+    <h3>Indentasi (geser paragraf)</h3>
+    <dl class="defs">
+      <dt>Decrease Indent</dt><dd>Menggeser paragraf ke kiri.</dd>
+      <dt>Increase Indent</dt><dd>Menggeser paragraf ke kanan.</dd>
+    </dl>
+
+    <h2>Pengaturan Lanjutan (Dialog Box)</h2>
+    <p>Jika Anda butuh pengaturan yang lebih detail, klik <b>tanda panah kecil</b> di pojok kanan bawah grup Font atau grup Paragraph.</p>
+    <dl class="defs">
+      <dt>Dialog Font</dt><dd>Mengatur efek khusus seperti <i>Strikethrough</i> (coret tengah), <i>Superscript</i> (pangkat atas seperti x<sup>2</sup>), dan <i>Subscript</i> (pangkat bawah seperti H<sub>2</sub>O).</dd>
+      <dt>Dialog Paragraph</dt><dd>Mengatur <b>Special Indent</b> (First Line) agar kalimat pertama otomatis menjorok ke dalam tanpa menekan Tab.</dd>
+    </dl>
+
+    <h2>Tips Profesional: Menggunakan Format Painter</h2>
+    <p>Jika Anda sudah mengatur satu judul dengan sangat rapi (jenis huruf, warna, ukuran) dan ingin menerapkan hal yang sama pada judul lain:</p>
+    <ol class="steps">
+      <li>Blok teks yang sudah rapi tersebut.</li>
+      <li>Klik ikon sapu kecil (<b>Format Painter</b>) di pojok kiri atas tab Home.</li>
+      <li>“Sapukan” atau blok teks baru yang ingin Anda ubah. Formatnya akan berubah seketika menjadi sama persis.</li>
+    </ol>
+
+    <h2>Ringkasan Tombol Cepat (Shortcut)</h2>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Fungsi</th><th>Shortcut</th></tr></thead>
+      <tbody>
+        <tr><td><b>Rata Tengah</b></td><td><kbd>Ctrl</kbd> + <kbd>E</kbd></td></tr>
+        <tr><td><b>Rata Kiri-Kanan</b></td><td><kbd>Ctrl</kbd> + <kbd>J</kbd></td></tr>
+        <tr><td><b>Membuka Menu Font</b></td><td><kbd>Ctrl</kbd> + <kbd>D</kbd></td></tr>
+        <tr><td><b>Menambah Ukuran Font</b></td><td><kbd>Ctrl</kbd> + <kbd>]</kbd></td></tr>
+        <tr><td><b>Mengurangi Ukuran Font</b></td><td><kbd>Ctrl</kbd> + <kbd>[</kbd></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= BAB 5 ================= -->
+<section class="page" id="bab-5" data-nav="Membuat dan Mengelola Tabel" data-type="bab" data-wm="Membuat dan Mengelola Tabel">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Membuat dan Mengelola Tabel</h1>
+    <p class="lead">Membuat dan mengelola tabel adalah keahlian penting di Microsoft Word untuk menyajikan data agar lebih terorganisir dan mudah dibaca.</p>
+
+    <h2>Cara Membuat Tabel</h2>
+    <p>Ada tiga cara utama untuk memasukkan tabel ke dalam dokumen.</p>
+    <div class="cards">
+      <div class="card"><h3>Metode Grid (cepat)</h3><p>Klik <b>Insert</b> &gt; <b>Table</b>, lalu gerakkan kursor di atas kotak-kotak (grid) untuk menentukan jumlah kolom (ke samping) dan baris (ke bawah).</p></div>
+      <div class="card"><h3>Insert Table (presisi)</h3><p>Klik <b>Insert</b> &gt; <b>Table</b> &gt; <b>Insert Table…</b>. Masukkan angka spesifik untuk jumlah kolom dan baris yang diinginkan.</p></div>
+      <div class="card"><h3>Draw Table (bebas)</h3><p>Klik <b>Insert</b> &gt; <b>Table</b> &gt; <b>Draw Table</b>. Kursor berubah menjadi pensil, sehingga Anda bisa menggambar kotak tabel secara manual.</p></div>
+    </div>
+
+    <h2>Mengenal Tab Kontekstual (Table Tools)</h2>
+    <p>Saat Anda mengeklik di dalam tabel, akan muncul dua tab baru di bagian atas (Ribbon) yang hanya aktif untuk tabel.</p>
+    <dl class="defs">
+      <dt>Table Design</dt><dd>Mengatur estetika (warna, gaya garis, bayangan).</dd>
+      <dt>Layout</dt><dd>Mengatur struktur (menambah/menghapus baris, menggabungkan sel, ukuran kolom).</dd>
+    </dl>
+
+    <h2>Memodifikasi Struktur Tabel (Tab Layout)</h2>
+    <p>Bagian ini adalah “dapur” untuk mengubah bentuk tabel Anda.</p>
+    <h3>Menambah dan menghapus</h3>
+    <dl class="defs">
+      <dt>Insert Above/Below</dt><dd>Menambah baris baru di atas atau di bawah kursor.</dd>
+      <dt>Insert Left/Right</dt><dd>Menambah kolom baru di samping kiri atau kanan kursor.</dd>
+      <dt>Delete</dt><dd>Menghapus sel, kolom, baris, atau seluruh tabel.</dd>
+    </dl>
+    <h3>Menggabungkan dan membagi sel</h3>
+    <dl class="defs">
+      <dt>Merge Cells</dt><dd>Menggabungkan dua atau lebih sel menjadi satu (biasanya untuk judul tabel).</dd>
+      <dt>Split Cells</dt><dd>Membagi satu sel menjadi beberapa kolom atau baris baru.</dd>
+      <dt>Split Table</dt><dd>Memotong tabel menjadi dua bagian yang terpisah.</dd>
+    </dl>
+    <h3>Mengatur ukuran (Cell Size)</h3>
+    <dl class="defs">
+      <dt>AutoFit</dt><dd>Menyesuaikan lebar kolom secara otomatis berdasarkan isi teks (<i>AutoFit Contents</i>) atau mengikuti lebar kertas (<i>AutoFit Window</i>).</dd>
+      <dt>Distribute Rows/Columns</dt><dd>Menyamakan ukuran tinggi semua baris atau lebar semua kolom agar seragam secara instan.</dd>
+    </dl>
+
+    <h2>Mengatur Tampilan dan Estetika (Tab Table Design)</h2>
+    <p>Agar tabel tidak terlihat kaku, Anda bisa memolesnya di sini.</p>
+    <dl class="defs">
+      <dt>Table Styles</dt><dd>Pilih desain instan yang sudah disediakan Word (warna selang-seling, garis tebal pada header, dll).</dd>
+      <dt>Shading</dt><dd>Memberi warna latar belakang pada sel atau baris tertentu secara manual.</dd>
+      <dt>Borders</dt><dd>Mengatur ketebalan garis, warna garis, atau bahkan menghilangkan garis tabel agar terlihat seperti daftar yang rapi.</dd>
+    </dl>
+
+    <h2>Pengaturan Teks di Dalam Tabel</h2>
+    <p>Teks di dalam tabel bisa diatur posisinya lebih detail daripada teks biasa.</p>
+    <dl class="defs">
+      <dt>Alignment</dt><dd>Di tab <b>Layout</b> terdapat 9 ikon perataan teks. Anda bisa mengatur teks agar tepat berada di tengah sel secara vertikal maupun horizontal (<i>Align Center</i>).</dd>
+      <dt>Text Direction</dt><dd>Mengubah arah tulisan menjadi miring atau tegak lurus (berguna untuk kolom yang sempit).</dd>
+      <dt>Cell Margins</dt><dd>Mengatur jarak aman antara tulisan dengan garis tepi sel agar tidak terlihat terlalu menempel.</dd>
+    </dl>
+
+    <h2>Tips dan Trik Tabel Profesional</h2>
+    <dl class="defs">
+      <dt>Mengulang header otomatis</dt><dd>Jika tabel sangat panjang hingga berpindah halaman, klik baris judul, lalu di tab <b>Layout</b> pilih <b>Repeat Header Rows</b>. Judul tabel akan muncul otomatis di halaman berikutnya.</dd>
+      <dt>Konversi teks ke tabel</dt><dd>Jika Anda sudah mengetik daftar menggunakan Tab atau koma, ubah menjadi tabel instan melalui <b>Insert</b> &gt; <b>Table</b> &gt; <b>Convert Text to Table</b>.</dd>
+      <dt>Menghitung data (Formula)</dt><dd>Word bisa melakukan perhitungan dasar seperti di Excel. Klik sel tempat hasil muncul, pilih <b>Layout</b> &gt; <b>Formula</b>, lalu masukkan rumus sederhana seperti <code>=SUM(ABOVE)</code>.</dd>
+    </dl>
+    <h3>Shortcut berguna</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Tombol</th><th>Fungsi</th></tr></thead>
+      <tbody>
+        <tr><td><kbd>Tab</kbd></td><td>Berpindah ke sel di sebelah kanan (atau membuat baris baru otomatis jika berada di sel terakhir).</td></tr>
+        <tr><td><kbd>Shift</kbd> + <kbd>Tab</kbd></td><td>Berpindah ke sel di sebelah kiri.</td></tr>
+        <tr><td><kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>↑</kbd> / <kbd>↓</kbd></td><td>Memindahkan baris tabel ke posisi atas atau bawah tanpa perlu Cut-Paste.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- ================= BAB 6 ================= -->
+<section class="page" id="bab-6" data-nav="Menyisipkan Gambar, Shapes, dan Ikon" data-type="bab" data-wm="Gambar, Shapes, dan Ikon">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Menyisipkan Gambar, Shapes, dan Ikon</h1>
+    <p class="lead">Menambahkan elemen visual seperti gambar, shapes, dan ikon (pengganti Clipart di versi terbaru) akan membuat dokumen Anda jauh lebih menarik dan mudah dipahami.</p>
+
+    <h2>Menyisipkan Gambar (Pictures)</h2>
+    <p>Gambar bisa berasal dari perangkat Anda sendiri atau dari internet. Caranya, klik menu <b>Insert</b> &gt; <b>Pictures</b>.</p>
+    <dl class="defs">
+      <dt>This Device</dt><dd>Mengambil foto yang tersimpan di komputer/laptop.</dd>
+      <dt>Stock Images</dt><dd>Koleksi gambar berkualitas tinggi gratis dari Microsoft.</dd>
+      <dt>Online Pictures</dt><dd>Mencari gambar langsung melalui mesin pencari Bing.</dd>
+    </dl>
+    <h3>Mengatur posisi (Layout Options)</h3>
+    <p>Saat gambar diklik, akan muncul ikon kecil di pojok kanan atas gambar.</p>
+    <dl class="defs">
+      <dt>In Line with Text</dt><dd>Gambar dianggap sebagai karakter teks (ikut bergeser jika ada ketikan).</dd>
+      <dt>Square / Tight</dt><dd>Teks akan mengelilingi gambar dengan rapi.</dd>
+      <dt>Behind Text</dt><dd>Gambar berada di belakang tulisan (seperti latar belakang).</dd>
+      <dt>In Front of Text</dt><dd>Gambar menutupi tulisan.</dd>
+    </dl>
+
+    <h2>Menggunakan Shapes (Bentuk Geometris)</h2>
+    <p>Shapes sangat berguna untuk membuat diagram, alur kerja (flowchart), atau dekorasi dokumen.</p>
+    <ol class="steps">
+      <li><b>Memasukkan.</b> Klik <b>Insert</b> &gt; <b>Shapes</b>, lalu pilih bentuk yang diinginkan (kotak, panah, lingkaran, dll).</li>
+      <li><b>Menggambar.</b> Setelah memilih bentuk, klik dan tahan (drag) di area dokumen untuk menentukan ukurannya.</li>
+      <li><b>Memodifikasi.</b> Klik pada shape tersebut, lalu gunakan tab <b>Shape Format</b> yang muncul.</li>
+    </ol>
+    <dl class="defs">
+      <dt>Shape Fill</dt><dd>Mengubah warna bagian dalam.</dd>
+      <dt>Shape Outline</dt><dd>Mengubah warna, ketebalan, atau jenis garis tepi.</dd>
+      <dt>Shape Effects</dt><dd>Memberi efek bayangan (<i>shadow</i>), cahaya (<i>glow</i>), atau efek 3D.</dd>
+      <dt>Add Text</dt><dd>Klik kanan pada shape dan pilih <b>Add Text</b> untuk mengetik di dalamnya.</dd>
+    </dl>
+
+    <h2>Mengenal Ikon dan Ilustrasi (Pengganti Clipart)</h2>
+    <p>Pada versi Microsoft Word terbaru (2019 ke atas/Office 365), fitur “Clipart” telah digantikan oleh <b>Icons</b> dan <b>Illustrations</b> yang lebih modern dan bergaya minimalis.</p>
+    <dl class="defs">
+      <dt>Cara memasukkan</dt><dd>Klik <b>Insert</b> &gt; <b>Icons</b>.</dd>
+      <dt>Keunggulan</dt><dd>Ikon ini berbasis vektor, artinya jika Anda memperbesar ukurannya sampai maksimal, gambar tidak akan pecah atau buram.</dd>
+      <dt>Kustomisasi</dt><dd>Anda bisa mengubah warna ikon menggunakan <b>Graphic Fill</b> di tab <b>Graphics Format</b>.</dd>
+    </dl>
+
+    <h2>Teknik Mengolah Gambar (Tab Picture Format)</h2>
+    <p>Setelah gambar masuk ke dokumen, Anda bisa mengeditnya secara instan tanpa aplikasi tambahan.</p>
+    <dl class="defs">
+      <dt>Crop</dt><dd>Memotong bagian gambar yang tidak diinginkan. Klik <b>Crop</b>, geser garis hitam di pinggir gambar, lalu tekan <kbd>Enter</kbd>.</dd>
+      <dt>Remove Background</dt><dd>Menghapus latar belakang foto secara otomatis (hanya menyisakan objek utama).</dd>
+      <dt>Corrections</dt><dd>Mengatur kecerahan (<i>brightness</i>) dan kontras agar gambar lebih jelas.</dd>
+      <dt>Picture Styles</dt><dd>Memberi bingkai, efek cermin, atau sudut tumpul pada gambar dalam satu klik.</dd>
+      <dt>Artistic Effects</dt><dd>Mengubah foto menjadi terlihat seperti sketsa pensil, lukisan cat air, atau efek mosaik.</dd>
+    </dl>
+
+    <h2>Mengatur Urutan dan Grup Elemen</h2>
+    <p>Jika Anda memiliki banyak gambar atau shapes yang bertumpuk:</p>
+    <dl class="defs">
+      <dt>Bring Forward / Send Backward</dt><dd>Digunakan untuk mengatur siapa yang berada di depan dan siapa yang di belakang.</dd>
+      <dt>Selection Pane</dt><dd>Klik <b>Layout</b> &gt; <b>Selection Pane</b> untuk melihat daftar semua objek di halaman dan menyembunyikannya jika perlu.</dd>
+      <dt>Group</dt><dd>Agar beberapa shapes tidak berantakan saat dipindah, blok semua objek (tahan <kbd>Shift</kbd> sambil klik masing-masing objek), klik kanan, lalu pilih <b>Group</b> &gt; <b>Group</b>. Sekarang mereka menyatu sebagai satu objek.</dd>
+    </dl>
+
+    <h2>Tips Mengatur Ukuran yang Proporsional</h2>
+    <p>Agar gambar atau shape tidak terlihat “peyang” (terlalu lebar atau terlalu tinggi):</p>
+    <ul class="plain">
+      <li>Selalu tarik dari <b>titik pojok</b> (diagonal) saat mengecilkan atau memperbesar.</li>
+      <li>Tahan tombol <kbd>Shift</kbd> pada keyboard sambil menarik titik pojok tersebut agar rasio lebar dan tingginya tetap terjaga sempurna.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= BAB 7 ================= -->
+<section class="page" id="bab-7" data-nav="Mengatur Tata Letak Halaman" data-type="bab" data-wm="Mengatur Tata Letak Halaman">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Mengatur Tata Letak Halaman</h1>
+    <p class="lead">Menu Layout (atau Page Layout pada versi lama) adalah bagian paling krusial untuk menentukan bagaimana dokumen Anda akan terlihat saat dicetak. Pengaturan yang salah di sini bisa membuat tulisan terpotong atau format berantakan.</p>
+
+    <h2>Grup Page Setup (Fondasi Dokumen)</h2>
+    <p>Ini adalah bagian terpenting untuk mengatur spesifikasi kertas Anda.</p>
+    <h3>Margins</h3>
+    <p>Mengatur jarak antara tepi kertas dengan teks.</p>
+    <dl class="defs">
+      <dt>Normal</dt><dd>Standar (2.54 cm di semua sisi).</dd>
+      <dt>Narrow</dt><dd>Margin sempit (cocok untuk menghemat kertas).</dd>
+      <dt>Custom Margins</dt><dd>Jika Anda ingin memasukkan angka manual (misalnya Atas 3, Bawah 3, Kiri 4, Kanan 3 untuk standar laporan).</dd>
+    </dl>
+    <h3>Orientation, Size, dan Columns</h3>
+    <dl class="defs">
+      <dt>Portrait</dt><dd>Kertas berdiri tegak.</dd>
+      <dt>Landscape</dt><dd>Kertas mendatar (cocok untuk tabel lebar atau sertifikat).</dd>
+      <dt>Size</dt><dd>Memilih ukuran fisik kertas, umumnya <b>A4</b> atau <b>F4/Folio</b>.</dd>
+      <dt>Columns</dt><dd>Membagi teks menjadi beberapa kolom (seperti tampilan koran). Anda bisa memilih 2, 3, atau lebih.</dd>
+    </dl>
+    <div class="callout"><b>Penting.</b> Selalu pastikan ukuran kertas di Word sama dengan kertas di printer Anda (umumnya A4 atau F4/Folio).</div>
+    <h3>Breaks</h3>
+    <dl class="defs">
+      <dt>Page Break</dt><dd>Memaksa teks pindah ke halaman baru.</dd>
+      <dt>Section Break</dt><dd>Digunakan jika Anda ingin halaman 1 berbentuk <i>Portrait</i> dan halaman 2 berbentuk <i>Landscape</i> dalam satu file yang sama.</dd>
+    </dl>
+
+    <h2>Grup Paragraph (Indentasi dan Spasi)</h2>
+    <p>Berbeda dengan pengaturan di tab Home, di sini Anda bisa mengatur jarak secara lebih presisi menggunakan angka.</p>
+    <dl class="defs">
+      <dt>Indent: Left</dt><dd>Menggeser seluruh paragraf dari batas kiri.</dd>
+      <dt>Indent: Right</dt><dd>Menggeser seluruh paragraf dari batas kanan.</dd>
+      <dt>Spacing: Before</dt><dd>Memberi jarak kosong <b>sebelum</b> paragraf dimulai.</dd>
+      <dt>Spacing: After</dt><dd>Memberi jarak kosong <b>setelah</b> paragraf selesai. Atur ke 0 pt jika Anda ingin jarak antar baris benar-benar rapat.</dd>
+    </dl>
+
+    <h2>Grup Arrange (Mengatur Posisi Objek)</h2>
+    <p>Menu ini akan aktif jika Anda mengeklik gambar, shape, atau tabel.</p>
+    <dl class="defs">
+      <dt>Position</dt><dd>Menentukan di mana gambar berada di halaman (misalnya pojok kanan atas, tengah, atau bawah).</dd>
+      <dt>Wrap Text</dt><dd>Menentukan bagaimana teks “bersikap” terhadap gambar. <i>Square</i>: teks mengelilingi kotak gambar. <i>In Front of Text</i>: gambar menutupi tulisan.</dd>
+      <dt>Bring Forward / Send Backward</dt><dd>Mengatur tumpukan objek, mana yang di depan dan mana yang tertutup di belakang.</dd>
+      <dt>Align</dt><dd>Merapikan beberapa objek agar sejajar (rata kiri, rata tengah, atau rata atas) secara otomatis.</dd>
+      <dt>Rotate</dt><dd>Memutar gambar atau bentuk sesuai derajat yang diinginkan.</dd>
+    </dl>
+
+    <h2>Tips Mengatur Ukuran Kertas F4 (Folio) di Indonesia</h2>
+    <p>Karena ukuran F4 sering tidak ada di daftar standar Word, Anda bisa mengaturnya secara manual:</p>
+    <ol class="steps">
+      <li>Klik <b>Layout</b> &gt; <b>Size</b> &gt; <b>More Paper Sizes</b>.</li>
+      <li>Pada tab <i>Paper</i>, masukkan <b>Width (Lebar): 21.59 cm</b> dan <b>Height (Tinggi): 33 cm</b>.</li>
+      <li>Klik <b>OK</b>.</li>
+    </ol>
+
+    <h2>Menggunakan Garis Baris (Line Numbers)</h2>
+    <p>Jika Anda membuat naskah hukum, puisi, atau naskah drama yang memerlukan referensi baris, klik <b>Line Numbers</b> &gt; <b>Continuous</b>. Word akan memberi nomor di setiap baris tulisan di samping kiri secara otomatis.</p>
+    <div class="callout"><b>Saran tambahan.</b> Sebelum mencetak, selalu gunakan fitur <b>Print Preview</b> (tekan <kbd>Ctrl</kbd> + <kbd>P</kbd>) untuk memastikan semua pengaturan di menu Layout sudah sesuai keinginan Anda agar tidak ada teks yang terpotong oleh batas margin.</div>
+  </div>
+</section>
+
+<!-- ================= BAB 8 ================= -->
+<section class="page" id="bab-8" data-nav="Menyimpan dan Mencetak Dokumen" data-type="bab" data-wm="Menyimpan dan Mencetak Dokumen">
+  <div class="sheet" tabindex="-1">
+    <div class="running"><span>Mahir Microsoft Word</span><span class="fo"></span></div>
+    <span class="chip chap-chip"></span>
+    <h1>Menyimpan dan Mencetak Dokumen</h1>
+    <p class="lead">Menyimpan dan mencetak adalah tahap akhir yang paling krusial. Jika salah langkah, kerja keras Anda bisa hilang atau hasil cetaknya tidak sesuai harapan.</p>
+
+    <h2>Menyimpan Dokumen (Saving)</h2>
+    <p>Microsoft Word memiliki beberapa cara untuk mengamankan file Anda.</p>
+    <h3>Perbedaan Save dan Save As</h3>
+    <dl class="defs">
+      <dt>Save</dt><dd><kbd>Ctrl</kbd> + <kbd>S</kbd>. Digunakan untuk menyimpan perubahan pada dokumen yang sudah pernah disimpan sebelumnya.</dd>
+      <dt>Save As</dt><dd><kbd>F12</kbd>. Digunakan untuk menyimpan dokumen untuk pertama kalinya, menyimpan dengan nama baru, atau mengubah format file (misalnya dari .docx ke .pdf).</dd>
+    </dl>
+    <h3>Cara menyimpan ke format PDF</h3>
+    <p>PDF sangat disarankan jika Anda ingin mengirim file agar tampilannya tidak berantakan saat dibuka di perangkat lain.</p>
+    <ol class="steps">
+      <li>Klik <b>File</b> &gt; <b>Save As</b>.</li>
+      <li>Pilih lokasi penyimpanan.</li>
+      <li>Pada bagian <b>Save as type</b>, klik dan pilih <b>PDF (*.pdf)</b>.</li>
+      <li>Klik <b>Save</b>.</li>
+    </ol>
+    <h3>Fitur AutoRecover</h3>
+    <p>Word memiliki fitur penyelamat jika laptop mati tiba-tiba. Pastikan fitur ini aktif:</p>
+    <ol class="steps">
+      <li>Klik <b>File</b> &gt; <b>Options</b> &gt; <b>Save</b>.</li>
+      <li>Pastikan centang pada <i>“Save AutoRecover information every X minutes”</i> aktif (disarankan setiap 5 menit).</li>
+    </ol>
+
+    <h2>Mencetak Dokumen (Printing)</h2>
+    <p>Sebelum menekan tombol cetak, masuklah ke tampilan <b>Backstage View</b> dengan menekan <kbd>Ctrl</kbd> + <kbd>P</kbd>.</p>
+    <h3>Mengatur pengaturan cetak (Settings)</h3>
+    <p>Di sisi kiri layar Print, terdapat beberapa opsi penting:</p>
+    <dl class="defs">
+      <dt>Copies</dt><dd>Tentukan berapa rangkap dokumen yang ingin dicetak.</dd>
+      <dt>Printer</dt><dd>Pilih mesin printer yang sedang aktif/tersambung.</dd>
+      <dt>Print All Pages</dt><dd><i>Print Selection</i>: hanya mencetak teks yang diblok. <i>Print Current Page</i>: hanya halaman yang sedang tampil di layar. <i>Custom Print</i>: menentukan halaman tertentu (contoh: ketik <code>1-5, 10</code> untuk mencetak halaman 1 sampai 5 dan halaman 10 saja).</dd>
+      <dt>One Sided / Both Sides</dt><dd>Memilih mencetak satu muka atau bolak-balik (jika printer mendukung).</dd>
+      <dt>Collated</dt><dd>Jika mencetak banyak rangkap, fitur ini memastikan dokumen keluar berurutan (halaman 1, 2, 3), bukan (halaman 1, 1, 1).</dd>
+    </dl>
+    <h3>Memastikan layout benar (Print Preview)</h3>
+    <p>Di sisi kanan layar, Anda akan melihat <b>Print Preview</b>. Selalu periksa bagian ini:</p>
+    <ul class="plain">
+      <li>Apakah ada teks yang terpotong di bagian pinggir? Jika ya, kecilkan margin di menu Layout.</li>
+      <li>Apakah ada halaman kosong di akhir? Jika ya, hapus baris kosong di dokumen Anda.</li>
+      <li>Gunakan ikon <b>Zoom</b> di pojok bawah untuk melihat detail tulisan.</li>
+    </ul>
+
+    <h2>Masalah Umum dan Solusinya</h2>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Masalah</th><th>Solusi</th></tr></thead>
+      <tbody>
+        <tr><td><b>Printer tidak terdeteksi</b></td><td>Pastikan kabel USB terpasang atau Wi-Fi printer terhubung, lalu cek di bagian <i>Printer List</i>.</td></tr>
+        <tr><td><b>Hasil cetak terpotong</b></td><td>Ukuran kertas di menu <b>Layout &gt; Size</b> tidak sama dengan kertas fisik yang dimasukkan ke printer.</td></tr>
+        <tr><td><b>Warna tidak muncul</b></td><td>Pastikan pengaturan pada <i>Printer Properties</i> tidak dalam mode “Grayscale” atau “Black and White”.</td></tr>
+        <tr><td><b>File terlalu besar untuk dikirim</b></td><td>Simpan dokumen dengan format PDF untuk memperkecil ukuran file tanpa merusak kualitas teks.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>Tips Tambahan: Menyimpan ke Cloud (OneDrive)</h2>
+    <p>Jika Anda memiliki akun Microsoft, simpanlah file ke <b>OneDrive</b>.</p>
+    <dl class="defs">
+      <dt>Keuntungan</dt><dd>File tersimpan secara otomatis setiap kali Anda mengetik (AutoSave), dan Anda bisa membukanya melalui HP atau komputer lain hanya dengan login akun yang sama.</dd>
+      <dt>Cara</dt><dd>Klik <b>File</b> &gt; <b>Save As</b> &gt; <b>OneDrive</b>.</dd>
+    </dl>
+    <div class="callout"><b>Selamat, Anda telah sampai di akhir buku.</b> Kembali ke <a href="#/daftar-isi">daftar isi</a> kapan saja untuk mengulang bab yang ingin Anda pelajari lagi.</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)}, $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var pages=$$(".page");
+  var ids=pages.map(function(p){return p.id});
+  var BOOK="Mahir Microsoft Word";
+
+  /* ---- lembar kerja ---- */
+  var WS=[
+    {goal:"Membuka Word, mengenali bagian-bagian jendelanya, dan menyimpan dokumen pertama.",
+     tasks:["Buka Microsoft Word lewat Menu Start: klik ikon Start, ketik “Word”, lalu tekan Enter.",
+       "Pada Start Screen, pilih Blank Document.",
+       "Tunjuk dan sebutkan lima bagian jendela: Quick Access Toolbar, Ribbon, Ruler, Area Kerja, dan Status Bar.",
+       "Ketik tiga kalimat perkenalan diri, lalu lihat jumlah kata di Status Bar.",
+       "Tekan Ctrl + S dan simpan dengan nama Latihan Bab 1 - Nama Anda.",
+       "Tekan Ctrl + N untuk membuat dokumen baru."],
+     q:[{t:"Bagian jendela Word manakah yang menampilkan jumlah kata dan Zoom Slider?",o:["Ribbon","Ruler","Status Bar","Quick Access Toolbar"],a:2,e:"Status Bar di baris bawah menampilkan nomor halaman, jumlah kata, tombol tampilan, dan Zoom Slider."},
+        {t:"Tombol cepat untuk membuat dokumen baru adalah…",o:["Ctrl + N","Ctrl + S","Ctrl + P","Ctrl + Z"],a:0,e:"Ctrl + N membuat dokumen baru secara instan."},
+        {t:"Standar huruf profesional yang disarankan buku ini adalah…",o:["Font dekoratif ukuran 20","Times New Roman ukuran 12 atau Arial ukuran 11","Arial ukuran 8","Font apa saja asal berwarna"],a:1,e:"Dokumen profesional biasanya memakai Times New Roman 12 atau Arial 11."}],
+     ch:"Tuliskan tiga hal baru yang Anda temukan saat menjelajahi tampilan Word."},
+    {goal:"Menemukan letak fitur utama pada setiap tab Ribbon.",
+     tasks:["Klik tab File. Temukan New, Open, Info, Save As, dan Print, lalu kembali ke dokumen.",
+       "Buka tab Home dan tunjuk grup Clipboard, Font, Paragraph, Styles, dan Editing.",
+       "Buka tab Insert dan temukan Pages, Tables, Illustrations, serta Header & Footer.",
+       "Buka tab Layout dan temukan Margins, Orientation, dan Size.",
+       "Buka tab References dan temukan Table of Contents, lalu buka tab Mailings dan temukan Start Mail Merge.",
+       "Buka tab Review dan temukan Spelling & Grammar, Comments, dan Tracking.",
+       "Buka tab View dan temukan Zoom, lalu buka tab Design dan temukan Watermark."],
+     q:[{t:"Tab manakah yang dipakai untuk membuat Daftar Isi otomatis?",o:["Home","Insert","References","View"],a:2,e:"Table of Contents ada di tab References dan bekerja berdasarkan Styles yang sudah diatur."},
+        {t:"Fitur untuk melacak perubahan saat revisi bersama ada di tab…",o:["Review","Design","Mailings","Layout"],a:0,e:"Tracking di tab Review mencatat setiap perubahan pada dokumen."},
+        {t:"Tanda air (Watermark) ditambahkan lewat tab…",o:["Insert","Design","File","Layout"],a:1,e:"Watermark ada di grup Page Background pada tab Design."}],
+     ch:"Tulis satu fitur favorit dari setiap tab beserta fungsinya."},
+    {goal:"Menyiapkan halaman dengan benar dan mengetik dokumen yang rapi.",
+     tasks:["Klik Layout > Size dan pilih A4.",
+       "Klik Layout > Margins > Custom Margins, lalu isi Atas 3, Bawah 3, Kiri 4, Kanan 3 (cm).",
+       "Di tab Home, pilih font Times New Roman ukuran 12.",
+       "Ketik dua paragraf tentang kegiatan sehari-hari. Tekan Enter hanya saat berpindah paragraf dan tekan Tab untuk menjorok.",
+       "Tekan Ctrl + A, lalu atur perataan Justify dan jarak baris 1.5.",
+       "Hapus satu kata dengan Backspace, lalu kembalikan dengan Ctrl + Z.",
+       "Simpan lewat File > Save dengan nama Latihan Bab 3."],
+     q:[{t:"Kapan tombol Enter sebaiknya ditekan?",o:["Di akhir setiap baris","Hanya saat memulai paragraf baru","Setelah setiap kata","Setiap lima kata"],a:1,e:"Word memindahkan kata ke baris berikutnya secara otomatis. Enter hanya untuk paragraf baru."},
+        {t:"Cara yang benar untuk membuat kalimat pertama paragraf menjorok adalah…",o:["Menekan spasi berulang kali","Menekan Enter dua kali","Menekan tombol Tab satu kali","Mengecilkan margin"],a:2,e:"Tab satu kali membuat indentasi yang konsisten, tidak seperti spasi berulang."},
+        {t:"Tombol Backspace menghapus karakter di…",o:["Kanan kursor","Seluruh baris","Seluruh paragraf","Kiri kursor"],a:3,e:"Backspace menghapus di kiri kursor, sedangkan Delete menghapus di kanan kursor."}],
+     ch:"Ketik surat pendek satu halaman untuk teman dengan A4, margin standar, Times New Roman 12, dan spasi 1.5."},
+    {goal:"Memformat huruf dan paragraf agar dokumen tampil profesional.",
+     tasks:["Ketik judul Profil Sekolah Saya dan tiga kalimat isi. Jadikan judul Bold (Ctrl + B), ukuran 14, dan rata tengah (Ctrl + E).",
+       "Blok paragraf isi, lalu atur rata kiri-kanan (Ctrl + J) dan jarak baris 1.5.",
+       "Beri Text Highlight Color pada satu kata penting dan Font Color pada kata lain.",
+       "Buat daftar Bullets berisi tiga item, lalu daftar Numbering berisi tiga langkah.",
+       "Buka Dialog Font, lalu coba Superscript untuk x2 dan Subscript untuk H2O.",
+       "Ketik satu subjudul, lalu salin format judul ke subjudul itu dengan Format Painter.",
+       "Buka Dialog Paragraph dan atur Special Indent (First Line) pada satu paragraf."],
+     q:[{t:"Tombol cepat Ctrl + J menghasilkan perataan…",o:["Rata tengah","Rata kanan","Rata kiri-kanan (Justify)","Rata kiri"],a:2,e:"Ctrl + J membuat teks rata kiri-kanan sehingga tampak kotak dan rapi."},
+        {t:"Untuk meniru format satu judul ke judul lain, gunakan…",o:["Change Case","Format Painter","Find","Numbering"],a:1,e:"Format Painter (ikon sapu kecil) menyalin jenis huruf, warna, dan ukuran dalam sekali sapu."},
+        {t:"Untuk daftar yang urutannya penting, gunakan…",o:["Bullets","Highlight","Subscript","Numbering"],a:3,e:"Numbering memakai angka atau huruf untuk daftar berurutan, sedangkan Bullets untuk daftar acak."}],
+     ch:"Buat pengumuman satu halaman: judul bertema, dua paragraf rata kiri-kanan, satu daftar berpoin, dan format yang diseragamkan dengan Format Painter."},
+    {goal:"Membuat tabel, mengubah strukturnya, dan merapikan tampilannya.",
+     tasks:["Buat tabel 4 kolom × 5 baris dengan Insert > Table (metode Grid).",
+       "Isi baris pertama dengan judul kolom: No, Nama, Mata Pelajaran, Nilai. Lalu isi empat baris data (nilai berupa angka).",
+       "Tambahkan satu baris di bawah tabel dengan Insert Below.",
+       "Tambahkan satu baris di paling atas, gabungkan seluruh selnya dengan Merge Cells, lalu ketik Daftar Nilai Kelas.",
+       "Di tab Table Design, pilih satu Table Styles dan beri Shading pada baris judul kolom.",
+       "Di tab Layout, atur teks sel menjadi Align Center.",
+       "Pada sel Nilai di baris tambahan paling bawah, pilih Layout > Formula dan masukkan =SUM(ABOVE).",
+       "Pindahkan satu baris data ke atas dengan Alt + Shift + Panah Atas."],
+     q:[{t:"Untuk membagi satu sel menjadi beberapa kolom atau baris, pilih…",o:["Merge Cells","Split Cells","AutoFit","Distribute Rows"],a:1,e:"Split Cells membagi satu sel, sedangkan Merge Cells menggabungkan beberapa sel."},
+        {t:"Agar judul tabel muncul lagi di halaman berikutnya, gunakan…",o:["Split Table","Text Direction","Repeat Header Rows","Cell Margins"],a:2,e:"Repeat Header Rows di tab Layout mengulang baris judul otomatis pada tabel yang panjang."},
+        {t:"Rumus untuk menjumlahkan angka di atas sel adalah…",o:["=SUM(ABOVE)","=TOTAL(UP)","=ADD(TOP)","=PLUS(ABOVE)"],a:0,e:"=SUM(ABOVE) dimasukkan lewat Layout > Formula."}],
+     ch:"Buat jadwal pelajaran mingguan dalam bentuk tabel dengan judul yang digabung, warna pada baris judul kolom, dan teks rata tengah."},
+    {goal:"Menyisipkan dan mengolah gambar, shapes, dan ikon.",
+     tasks:["Sisipkan satu foto lewat Insert > Pictures > This Device.",
+       "Ubah Layout Options foto menjadi Square agar teks mengelilinginya.",
+       "Gunakan Crop untuk memotong bagian yang tidak perlu, lalu coba satu Picture Styles.",
+       "Gambar tiga kotak lewat Insert > Shapes dan hubungkan dengan dua panah. Klik kanan > Add Text, lalu ketik Mulai, Proses, dan Selesai.",
+       "Ubah Shape Fill dan Shape Outline pada salah satu bentuk.",
+       "Tahan Shift, klik semua bentuk, lalu klik kanan > Group > Group.",
+       "Perbesar foto dengan menarik titik pojok sambil menahan Shift.",
+       "Sisipkan satu ikon lewat Insert > Icons dan ubah warnanya dengan Graphic Fill."],
+     q:[{t:"Agar gambar berada di belakang tulisan, pilih Layout Options…",o:["Square","Tight","In Line with Text","Behind Text"],a:3,e:"Behind Text menempatkan gambar di belakang tulisan, seperti latar belakang."},
+        {t:"Agar gambar tidak “peyang” saat diubah ukurannya, lakukan…",o:["Tarik dari sisi tengah","Tahan Shift sambil menarik titik pojok","Tekan Ctrl + Z","Gunakan Crop"],a:1,e:"Shift menjaga rasio lebar dan tinggi tetap proporsional."},
+        {t:"Keunggulan Icons dibanding gambar biasa adalah…",o:["Ukuran file selalu lebih besar","Hanya tersedia hitam putih","Berbasis vektor sehingga tidak pecah saat diperbesar","Tidak bisa diubah warnanya"],a:2,e:"Ikon berbasis vektor, dan warnanya bisa diubah dengan Graphic Fill."}],
+     ch:"Buat poster sederhana berisi satu foto, satu ikon, dan diagram alur tiga langkah yang sudah di-Group."},
+    {goal:"Mengatur tata letak halaman agar hasil cetak sesuai harapan.",
+     tasks:["Klik Layout > Size > More Paper Sizes, lalu atur Width 21.59 cm dan Height 33 cm (F4).",
+       "Kembalikan ke A4, lalu atur Custom Margins: Atas 3, Bawah 3, Kiri 4, Kanan 3.",
+       "Ubah Orientation menjadi Landscape, lihat perubahannya, lalu kembalikan ke Portrait.",
+       "Ketik dua paragraf, bagi menjadi 2 kolom lewat Columns, lalu kembalikan menjadi 1 kolom.",
+       "Sisipkan Page Break lewat Layout > Breaks agar teks berikutnya pindah ke halaman baru.",
+       "Di grup Paragraph, atur Indent Left 1 cm dan Spacing After 0 pt pada satu paragraf.",
+       "Tekan Ctrl + P, periksa Print Preview, dan pastikan tidak ada teks yang terpotong."],
+     q:[{t:"Untuk memakai Portrait di halaman 1 dan Landscape di halaman 2 dalam satu file, gunakan…",o:["Page Break","Section Break","Line Numbers","Columns"],a:1,e:"Section Break memungkinkan pengaturan halaman berbeda dalam satu file."},
+        {t:"Ukuran kertas F4 diatur manual menjadi…",o:["Lebar 10 cm, tinggi 15 cm","Lebar 29.7 cm, tinggi 21 cm","Lebar 21.59 cm, tinggi 33 cm","Lebar 33 cm, tinggi 21.59 cm"],a:2,e:"F4 (Folio) diatur lewat More Paper Sizes dengan lebar 21.59 cm dan tinggi 33 cm."},
+        {t:"Margin Normal di Word bernilai…",o:["2.54 cm di semua sisi","1 cm di semua sisi","3 cm di semua sisi","4 cm di sisi kiri saja"],a:0,e:"Normal berarti 2.54 cm di semua sisi. Standar laporan memakai Custom Margins 3, 3, 4, 3."}],
+     ch:"Susun laporan dua halaman: halaman 1 Portrait dengan margin standar, halaman 2 Landscape berisi tabel lebar, dipisahkan dengan Section Break."},
+    {goal:"Menyimpan dokumen dengan aman dan mencetaknya dengan benar.",
+     tasks:["Tekan Ctrl + S untuk menyimpan, lalu tekan F12 (Save As) dan simpan lagi dengan nama baru.",
+       "Simpan dokumen sebagai PDF: File > Save As, pilih PDF (*.pdf) pada Save as type, lalu klik Save.",
+       "Buka File > Options > Save, pastikan AutoRecover aktif dan atur setiap 5 menit.",
+       "Tekan Ctrl + P. Atur Copies menjadi 2 dan Custom Print menjadi 1-2.",
+       "Amati Print Preview: periksa teks yang terpotong dan halaman kosong di akhir, lalu gunakan Zoom.",
+       "Opsional: jika punya akun Microsoft, coba File > Save As > OneDrive."],
+     q:[{t:"Format yang paling aman agar tampilan tidak berantakan saat dibuka di perangkat lain adalah…",o:["DOCX saja","PDF","TXT","Semua sama saja"],a:1,e:"PDF menjaga tampilan dan memperkecil ukuran file tanpa merusak kualitas teks."},
+        {t:"Mengetik 1-5, 10 pada Custom Print akan mencetak…",o:["Halaman 1 sampai 5 dan halaman 10","Hanya halaman 1 dan 5","Halaman 1 sampai 10","Sepuluh salinan"],a:0,e:"Custom Print mencetak halaman 1 sampai 5 dan halaman 10 saja."},
+        {t:"Jika hasil cetak terpotong, penyebab yang mungkin adalah…",o:["Printer terlalu baru","Font terlalu tebal","Ukuran kertas di Layout > Size berbeda dengan kertas di printer","Nama file terlalu panjang"],a:2,e:"Ukuran kertas di Word harus sama dengan kertas fisik yang dimasukkan ke printer."}],
+     ch:"Buat surat resmi satu halaman dengan A4, margin standar, Times New Roman 12, spasi 1.5, dan rata kiri-kanan, lalu simpan sebagai PDF."}
+  ];
+  var store={c:{}};
+  try{var raw=localStorage.getItem("mmw-ws"); if(raw){var o=JSON.parse(raw); if(o&&typeof o==="object") store=o}}catch(e){}
+  if(!store.c) store.c={};
+  function saveStore(){try{localStorage.setItem("mmw-ws",JSON.stringify(store))}catch(e){}}
+  function hx(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+  function st(no){var v=store.c[no]; if(!v) v=store.c[no]={t:[],q:[],n:""}; if(!v.t)v.t=[]; if(!v.q)v.q=[]; return v}
+  function prog(no){
+    var d=WS[no-1], v=st(no), done=0, solved=0;
+    d.tasks.forEach(function(x,i){if(v.t[i]) done++});
+    d.q.forEach(function(x,i){if((v.q[i]||[]).indexOf(x.a)>-1) solved++});
+    var total=d.tasks.length+d.q.length;
+    return {done:done,solved:solved,pct:Math.round((done+solved)/total*100),tasks:d.tasks.length,qs:d.q.length};
+  }
+  function renderWS(p,no){
+    var d=WS[no-1]; if(!d) return;
+    var h='<div class="ws" id="ws-'+no+'" data-no="'+no+'"><h2>Lembar Kerja</h2><p class="ws-goal"><b>Tujuan:</b> '+hx(d.goal)+'</p>';
+    h+='<div class="ws-id"><label>Nama<input type="text" class="ws-name" autocomplete="name" enterkeyhint="done"></label><label>Kelas<input type="text" class="ws-kelas" enterkeyhint="done"></label></div>';
+    h+='<h3>A. Praktik di Microsoft Word</h3><p>Buka Word di komputer, kerjakan tiap langkah, lalu centang langkah yang sudah selesai.</p><ul class="ws-tasks">';
+    d.tasks.forEach(function(t,i){h+='<li><label><input type="checkbox" data-t="'+i+'"><span>'+hx(t)+'</span></label></li>'});
+    h+='</ul><div class="ws-meter"><div class="bar"><i></i></div><span class="txt" role="status"></span></div>';
+    h+='<h3>B. Cek Pemahaman</h3>';
+    d.q.forEach(function(q,qi){
+      h+='<div class="ws-q" data-q="'+qi+'"><p class="qt">'+(qi+1)+'. '+hx(q.t)+'</p><div class="opts">'+
+        q.o.map(function(o,oi){return '<button type="button" data-o="'+oi+'">'+hx(o)+'</button>'}).join("")+
+        '</div><p class="fb" role="status"></p></div>';
+    });
+    h+='<p class="ws-score"></p>';
+    h+='<h3>C. Tantangan</h3><p>'+hx(d.ch)+'</p><label class="ws-note">Catatan atau hasil praktik saya<textarea rows="3" placeholder="Tulis catatan Anda di sini"></textarea></label>';
+    h+='<div class="ws-actions"><button type="button" class="btn outline" data-act="reset">Ulangi dari awal</button></div></div>';
+    $(".sheet",p).insertAdjacentHTML("beforeend",h);
+  }
+  function paint(no){
+    var box=$("#ws-"+no); if(!box) return;
+    var d=WS[no-1], v=st(no);
+    $$('input[data-t]',box).forEach(function(c,i){c.checked=!!v.t[i]});
+    $$(".ws-q",box).forEach(function(qb,qi){
+      var tried=v.q[qi]||[], a=d.q[qi].a, ok=tried.indexOf(a)>-1;
+      $$("button",qb).forEach(function(b,oi){
+        var was=tried.indexOf(oi)>-1;
+        b.className=was?(oi===a?"ok":"no"):"";
+        b.disabled=ok||was;
+      });
+      var fb=$(".fb",qb);
+      if(ok) fb.innerHTML="<b>Benar.</b> "+hx(d.q[qi].e);
+      else if(tried.length) fb.textContent="Belum tepat. Baca lagi bagian bab ini, lalu coba pilihan lain.";
+      else fb.textContent="";
+    });
+    var g=prog(no);
+    $(".bar i",box).style.width=g.pct+"%";
+    $(".ws-meter .txt",box).textContent=g.done+" dari "+g.tasks+" langkah selesai";
+    $(".ws-score",box).textContent="Cek pemahaman: "+g.solved+" dari "+g.qs+" pertanyaan terjawab benar";
+  }
+  function badges(){
+    chapterPages.forEach(function(p){
+      var no=+p.dataset.no, g=prog(no), full=g.pct>=100;
+      var b=$('.ws-badge[data-no="'+no+'"]'), k=$('.ck[data-no="'+no+'"]');
+      if(b){ b.textContent=full?"Lembar kerja selesai":(g.pct>0?"Lembar kerja "+g.pct+"%":"Lembar kerja tersedia"); b.classList.toggle("done",full) }
+      if(k){ k.textContent=full?"\u2713":"" }
+    });
+  }
+  function initWS(){
+    chapterPages.forEach(function(p){
+      var no=+p.dataset.no, box=$("#ws-"+no); if(!box) return;
+      $("textarea",box).value=st(no).n||"";
+      paint(no);
+    });
+    $$(".ws-name").forEach(function(x){x.value=store.name||""});
+    $$(".ws-kelas").forEach(function(x){x.value=store.kelas||""});
+    badges();
+  }
+  document.addEventListener("input",function(e){
+    var t=e.target, box=t.closest?t.closest(".ws"):null; if(!box) return;
+    if(t.classList.contains("ws-name")||t.classList.contains("ws-kelas")){
+      var isName=t.classList.contains("ws-name"); store[isName?"name":"kelas"]=t.value; saveStore();
+      $$(isName?".ws-name":".ws-kelas").forEach(function(x){if(x!==t)x.value=t.value});
+    } else if(t.tagName==="TEXTAREA"){ st(+box.dataset.no).n=t.value; saveStore() }
+  });
+  document.addEventListener("change",function(e){
+    var t=e.target; if(!(t.matches&&t.matches('.ws input[type="checkbox"]'))) return;
+    var no=+t.closest(".ws").dataset.no; st(no).t[+t.dataset.t]=t.checked; saveStore(); paint(no); badges();
+  });
+  document.addEventListener("click",function(e){
+    var b=e.target.closest?e.target.closest(".ws-q .opts button"):null;
+    if(b&&!b.disabled){
+      var no=+b.closest(".ws").dataset.no, qi=+b.closest(".ws-q").dataset.q, v=st(no);
+      (v.q[qi]=v.q[qi]||[]).push(+b.dataset.o); saveStore(); paint(no); badges(); return;
+    }
+    var r=e.target.closest?e.target.closest('[data-act="reset"]'):null;
+    if(!r) return;
+    if(r.dataset.armed){
+      var n2=+r.closest(".ws").dataset.no; store.c[n2]={t:[],q:[],n:""}; saveStore();
+      $("textarea",r.closest(".ws")).value=""; paint(n2); badges();
+      delete r.dataset.armed; r.textContent="Ulangi dari awal";
+    } else {
+      r.dataset.armed="1"; r.textContent="Ketuk lagi untuk menghapus isian bab ini";
+      setTimeout(function(){delete r.dataset.armed; r.textContent="Ulangi dari awal"},3500);
+    }
+  });
+
+  /* ---- penomoran bab & subbab ---- */
+  var chapterPages=pages.filter(function(p){return p.dataset.type==="bab"});
+  chapterPages.forEach(function(p,i){
+    var no=i+1; p.dataset.no=no; p.dataset.folio=no;
+    $(".chap-chip",p).textContent="Bab "+no;
+    $(".fo",p).textContent="Halaman "+no;
+    renderWS(p,no);
+    $$("h2",p).forEach(function(h,j){
+      h.id=p.id+"-s"+(j+1);
+      var s=document.createElement("span"); s.className="sec-no"; s.textContent=no+"."+(j+1);
+      h.insertBefore(s,h.firstChild);
+    });
+  });
+
+  /* ---- watermark judul bab pada tiap halaman ---- */
+  function esc(t){return t.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  function wmUrl(title){
+    var t=title.toUpperCase(), words=t.split(" "), lines=[t];
+    if(t.length>14 && words.length>1){
+      var best=1,bd=1e9;
+      for(var i=1;i<words.length;i++){
+        var a=words.slice(0,i).join(" ").length,b=words.slice(i).join(" ").length;
+        if(Math.abs(a-b)<bd){bd=Math.abs(a-b);best=i}
+      }
+      lines=[words.slice(0,best).join(" "),words.slice(best).join(" ")];
+    }
+    var longest=Math.max.apply(null,lines.map(function(l){return l.length}));
+    var fs=Math.max(22,Math.min(46,440/(longest*0.66)));
+    var y0=lines.length>1?-fs*0.55:0;
+    var txt=lines.map(function(l,i){return '<tspan x="0" dy="'+(i===0?0:fs*1.15)+'">'+esc(l)+'</tspan>'}).join("");
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" width="620" height="420"><g transform="translate(310 210) rotate(-24)"><text y="'+y0+'" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="800" font-size="'+fs+'" fill="#000">'+txt+'</text></g></svg>';
+    return 'url("data:image/svg+xml,'+encodeURIComponent(svg)+'")';
+  }
+  pages.forEach(function(p){p.style.setProperty("--wm-img",wmUrl(p.dataset.wm||p.dataset.nav))});
+
+  /* ---- sidebar ---- */
+  var nav=$("#nav"), html="";
+  html+='<h3>Bagian awal</h3>';
+  pages.filter(function(p){return p.dataset.type==="front"}).forEach(function(p){
+    var n=p.id==="sampul"?"":"";
+    html+='<a href="#/'+p.id+'" data-id="'+p.id+'"><span class="n">'+(p.dataset.folio||"")+'</span><span>'+p.dataset.nav+'</span></a>';
+  });
+  html+='<h3>Isi buku</h3>';
+  chapterPages.forEach(function(p){
+    html+='<a href="#/'+p.id+'" data-id="'+p.id+'"><span class="n">'+p.dataset.no+'</span><span>'+p.dataset.nav+'</span><span class="ck" data-no="'+p.dataset.no+'" aria-hidden="true"></span></a>';
+  });
+  nav.innerHTML=html;
+
+  /* ---- kartu bab di beranda ---- */
+  var blurbs=[
+    "Cara membuka Word, memulai dokumen, dan mengenal tampilan utama.",
+    "Bedah tuntas sembilan tab menu Ribbon dari File hingga Design.",
+    "Persiapan halaman, teknik mengetik yang benar, perataan, dan koreksi.",
+    "Font, paragraf, spasi, daftar, indentasi, dan Format Painter.",
+    "Tiga cara membuat tabel, mengubah struktur, dan tips profesional.",
+    "Pictures, Shapes, Icons, mengolah gambar, dan mengelompokkan objek.",
+    "Margin, orientasi, ukuran kertas F4, kolom, dan pengaturan objek.",
+    "Save, Save As, PDF, AutoRecover, pengaturan cetak, dan solusi masalah umum."
+  ];
+  $("#chapterGrid").innerHTML=chapterPages.map(function(p,i){
+    return '<a href="#/'+p.id+'"><span class="no">Bab '+p.dataset.no+'</span><h3>'+p.dataset.nav+'</h3><p>'+blurbs[i]+'</p><span class="ws-badge" data-no="'+p.dataset.no+'"></span></a>';
+  }).join("");
+
+  /* ---- daftar isi ---- */
+  var toc='<li class="toc-item"><a class="toc-row" href="#/kata-pengantar"><span class="no"></span><span class="tt">Kata Pengantar</span><span class="dots"></span><span class="fo">i</span></a></li>';
+  chapterPages.forEach(function(p){
+    toc+='<li class="toc-item"><a class="toc-row" href="#/'+p.id+'"><span class="no">Bab '+p.dataset.no+'</span><span class="tt">'+p.dataset.nav+'</span><span class="dots"></span><span class="fo">'+p.dataset.no+'</span></a><ul class="toc-sub">';
+    $$("h2",p).forEach(function(h){
+      var label=h.childNodes[1]?h.textContent.replace(h.firstChild.textContent,""):h.textContent;
+      toc+='<li><a href="#/'+p.id+'/'+h.id+'"><span class="sn">'+h.firstChild.textContent+'</span><span>'+label.trim()+'</span></a></li>';
+    });
+    toc+='</ul></li>';
+  });
+  $("#tocList").innerHTML=toc;
+
+  /* ---- pager & footer tiap halaman ---- */
+  pages.forEach(function(p,i){
+    if(p.id==="sampul") return;
+    var prev=pages[i-1], next=pages[i+1], sheet=$(".sheet",p), h='<nav class="pager" aria-label="Pindah halaman">';
+    if(prev && prev.id!=="sampul") h+='<a class="prev" href="#/'+prev.id+'"><small>Sebelumnya</small><b>'+prev.dataset.nav+'</b></a>';
+    else h+='<a class="prev" href="#/sampul"><small>Sebelumnya</small><b>Sampul</b></a>';
+    if(next) h+='<a class="next" href="#/'+next.id+'"><small>Berikutnya</small><b>'+next.dataset.nav+'</b></a>';
+    else h+='<a class="next" href="#/daftar-isi"><small>Selesai</small><b>Kembali ke Daftar Isi</b></a>';
+    h+='</nav><div class="foot"><span>'+BOOK+'</span><span>Adho Ughy Baco Kuttu</span></div>';
+    sheet.insertAdjacentHTML("beforeend",h);
+  });
+
+  initWS();
+
+  /* ---- Ribbon explorer ---- */
+  var RIB=[
+    {n:"File",t:"Menu FILE (Backstage View)",i:"Ini adalah satu-satunya menu yang membuka tampilan penuh (bukan sekadar barisan ikon). Fungsinya berkaitan dengan manajemen dokumen secara keseluruhan.",
+     d:[["New","Membuat dokumen baru (kosong atau template)."],["Open","Membuka dokumen yang tersimpan di perangkat atau cloud."],["Info","Melihat properti dokumen dan mengatur proteksi (password)."],["Save / Save As","Menyimpan dokumen atau menyimpan ulang dengan nama/format berbeda (seperti PDF)."],["Print","Mengatur cetak dokumen dan melihat Print Preview."]]},
+    {n:"Home",t:"Menu HOME (Menu Utama)",i:"Menu yang paling sering digunakan untuk memformat teks.",
+     d:[["Clipboard","Tempat perintah Cut, Copy, Paste, dan Format Painter (meniru format teks ke bagian lain)."],["Font","Mengatur jenis huruf, ukuran, warna, cetak tebal (B), miring (I), garis bawah (U), dan Clear All Formatting."],["Paragraph","Mengatur perataan teks (kiri, tengah, kanan, rata kiri-kanan), simbol peluru (Bullets), penomoran (Numbering), serta jarak antar baris (Line Spacing)."],["Styles","Pilihan format otomatis untuk Judul (Heading) agar dokumen rapi dan bisa dibuatkan Daftar Isi otomatis."],["Editing","Mencari kata tertentu (Find) atau mengganti kata secara massal (Replace)."]]},
+    {n:"Insert",t:"Menu INSERT (Menyisipkan Objek)",i:"Gunakan menu ini jika Anda ingin memasukkan sesuatu ke dalam dokumen.",
+     d:[["Pages","Menambah halaman kosong atau halaman sampul (Cover Page)."],["Tables","Membuat tabel untuk data."],["Illustrations","Menyisipkan Gambar (Pictures), Bentuk (Shapes), Ikon, atau Diagram (SmartArt)."],["Header & Footer","Menambah catatan di bagian atas atau bawah kertas, termasuk nomor halaman (Page Number)."],["Text","Menyisipkan Kotak Teks (Text Box) atau tanda tangan digital."],["Symbols","Memasukkan rumus matematika (Equation) atau simbol unik yang tidak ada di keyboard."]]},
+    {n:"Layout",t:"Menu LAYOUT (Tata Letak Halaman)",i:"Berfungsi untuk mengatur tampilan kertas sebelum dicetak.",
+     d:[["Page Setup","Margins (batas jarak teks ke tepi kertas), Orientation (Potret/Tegak atau Lanskap/Mendatar), dan Size (A4, F4/Folio, Legal, dll)."],["Columns","Membagi teks menjadi beberapa kolom (seperti koran)."],["Paragraph","Mengatur jarak masuknya paragraf (Indent) dan jarak antar paragraf secara spesifik (Spacing)."]]},
+    {n:"References",t:"Menu REFERENCES (Referensi & Karya Ilmiah)",i:"Sangat berguna untuk pembuatan buku, skripsi, atau laporan resmi.",
+     d:[["Table of Contents","Membuat Daftar Isi otomatis berdasarkan Styles yang sudah diatur."],["Footnotes","Menambahkan catatan kaki di bawah halaman."],["Citations & Bibliography","Mengatur kutipan dan membuat Daftar Pustaka secara otomatis."],["Captions","Memberi label pada gambar atau tabel agar bisa dibuat Daftar Gambar otomatis."]]},
+    {n:"Mailings",t:"Menu MAILINGS (Surat-menyurat)",i:"Fungsi utamanya adalah Mail Merge, yaitu membuat satu format surat yang bisa dikirim ke ratusan nama berbeda secara otomatis.",
+     d:[["Create","Membuat label atau amplop."],["Start Mail Merge","Menghubungkan dokumen Word dengan database nama/alamat (biasanya dari Excel)."]]},
+    {n:"Review",t:"Menu REVIEW (Pemeriksaan)",i:"Digunakan sebelum dokumen dianggap selesai atau saat berkolaborasi dengan orang lain.",
+     d:[["Proofing","Mengecek ejaan (Spelling & Grammar) dan kamus sinonim (Thesaurus)."],["Language","Menerjemahkan teks atau mengatur bahasa pemeriksaan."],["Comments","Memberikan catatan kecil pada bagian teks tertentu tanpa mengubah teks aslinya."],["Tracking","Melacak setiap perubahan yang dilakukan pada dokumen (sangat berguna untuk revisi bersama)."]]},
+    {n:"View",t:"Menu VIEW (Tampilan Kerja)",i:"Hanya mengubah cara Anda melihat dokumen di layar, tidak mengubah isi dokumen.",
+     d:[["Views","Memilih mode baca, mode desain web, atau mode standar (Print Layout)."],["Show","Menampilkan atau menyembunyikan Penggaris (Ruler) dan garis bantu (Gridlines)."],["Zoom","Memperbesar atau memperkecil tampilan halaman."],["Window","Membuka dua jendela untuk dokumen yang sama agar mudah membandingkan bagian atas dan bawah file."]]},
+    {n:"Design",t:"Menu DESIGN (Visual Dokumen)",i:"Fokus pada estetika keseluruhan dokumen.",
+     d:[["Document Formatting","Mengubah tema warna dan kombinasi font seluruh dokumen secara instan."],["Page Background","Menambahkan tanda air (Watermark), mengubah warna kertas, atau memberi bingkai pada halaman (Page Borders)."]]}
+  ];
+  (function(){
+    var root=$("#ribbon"), tabs=$(".rib-tabs",root), panel=$(".rib-panel",root), cur=0;
+    RIB.forEach(function(r,i){
+      var b=document.createElement("button"); b.type="button"; b.setAttribute("role","tab"); b.id="rt-"+i; b.textContent=r.n;
+      b.addEventListener("click",function(){select(i)});
+      b.addEventListener("keydown",function(e){
+        if(e.key==="ArrowRight"){select((cur+1)%RIB.length,true)}
+        else if(e.key==="ArrowLeft"){select((cur+RIB.length-1)%RIB.length,true)}
+      });
+      tabs.appendChild(b);
+    });
+    function select(i,focus){
+      cur=i; var r=RIB[i];
+      $$("button",tabs).forEach(function(b,j){b.setAttribute("aria-selected",j===i?"true":"false");b.tabIndex=j===i?0:-1;if(focus&&j===i)b.focus()});
+      panel.setAttribute("aria-labelledby","rt-"+i);
+      panel.innerHTML='<h3>'+esc(r.t)+'</h3><p class="intro">'+esc(r.i)+'</p><dl class="defs">'+r.d.map(function(x){return '<dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd>'}).join("")+'</dl>';
+    }
+    select(0);
+  })();
+
+  /* ---- tema ---- */
+  var root=document.documentElement;
+  try{var saved=localStorage.getItem("mmw-theme"); if(saved) root.setAttribute("data-theme",saved)}catch(e){}
+  $("#themeBtn").addEventListener("click",function(){
+    var isDark=root.getAttribute("data-theme")==="dark" || (!root.getAttribute("data-theme") && matchMedia("(prefers-color-scheme:dark)").matches);
+    var next=isDark?"light":"dark"; root.setAttribute("data-theme",next);
+    try{localStorage.setItem("mmw-theme",next)}catch(e){}
+    syncColor();
+  });
+
+  /* ---- menu mobile ---- */
+  var body=document.body, menuBtn=$("#menuBtn");
+  function setNav(open){
+    body.classList.toggle("nav-open",open);
+    menuBtn.setAttribute("aria-expanded",open?"true":"false");
+    var bm=$("#bbMenu"); if(bm) bm.setAttribute("aria-expanded",open?"true":"false");
+    if(open){setTimeout(function(){var a=$("#nav a[aria-current]"); if(a) a.scrollIntoView({block:"center"})},0)}
+  }
+  menuBtn.addEventListener("click",function(){setNav(!body.classList.contains("nav-open"))});
+  $("#scrim").addEventListener("click",function(){setNav(false)});
+  $("#bbMenu").addEventListener("click",function(){setNav(!body.classList.contains("nav-open"))});
+  (function(){
+    var side=$("#side"),x0=0;
+    side.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+    side.addEventListener("touchend",function(e){if(e.changedTouches[0].clientX-x0<-60)setNav(false)},{passive:true});
+  })();
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")setNav(false)});
+
+  /* ---- router ---- */
+  var meta=$('meta[name="theme-color"]'), phone=matchMedia("(max-width:1000px)"), tb=$("#topbar");
+  var lastIdx=-1, lastY=0, ticking=false;
+  var bbPrev=$("#bbPrev"), bbNext=$("#bbNext"), bbHome=$("#bbHome"), bbToc=$("#bbToc");
+  function syncColor(){
+    if(!meta) return;
+    var c=body.classList.contains("is-cover")?"#0A1C45":getComputedStyle(root).getPropertyValue("--bg").trim();
+    if(c) meta.setAttribute("content",c);
+  }
+  function setLink(a,id){
+    if(id){a.setAttribute("href","#/"+id);a.removeAttribute("aria-disabled")}
+    else{a.setAttribute("href","#/beranda");a.setAttribute("aria-disabled","true")}
+  }
+  function jump(fn){root.style.scrollBehavior="auto";fn();root.style.scrollBehavior=""}
+  function show(){
+    var parts=location.hash.replace(/^#\/?/,"").split("/"), id=parts[0]||"sampul", sec=parts[1];
+    if(ids.indexOf(id)<0) id="sampul";
+    var idx=ids.indexOf(id), cur=$("#"+id), was=pages.filter(function(p){return !p.hidden})[0], changed=!was||was.id!==id;
+    pages.forEach(function(p){p.hidden=p.id!==id});
+    body.classList.toggle("is-cover",id==="sampul");
+    cur.classList.remove("enter-next","enter-prev");
+    if(changed && lastIdx>=0){void cur.offsetWidth;cur.classList.add(idx>=lastIdx?"enter-next":"enter-prev")}
+    lastIdx=idx;
+    $$("#nav a").forEach(function(a){ if(a.dataset.id===id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current")});
+    $$(".topbar .tl").forEach(function(a){ if(a.dataset["for"]===id) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current")});
+    bbHome.toggleAttribute("aria-current",false); bbToc.toggleAttribute("aria-current",false);
+    if(id==="beranda") bbHome.setAttribute("aria-current","page");
+    if(id==="daftar-isi") bbToc.setAttribute("aria-current","page");
+    setLink(bbPrev,idx>0?ids[idx-1]:null);
+    setLink(bbNext,idx<ids.length-1?ids[idx+1]:null);
+    document.title=(id==="sampul"?BOOK+": Panduan Praktis dari Dasar hingga Dokumen Profesional":cur.dataset.nav+" | "+BOOK);
+    setNav(false);
+    tb.classList.remove("hide");
+    var target=sec?document.getElementById(sec):null;
+    if(target){ jump(function(){target.scrollIntoView({block:"start"})}) }
+    else { jump(function(){window.scrollTo(0,0)}); var sh=$(".sheet",cur); if(sh) sh.focus({preventScroll:true}); }
+    lastY=window.scrollY;
+    syncColor(); update();
+  }
+  function update(){
+    ticking=false;
+    var h=document.documentElement, max=h.scrollHeight-h.clientHeight, y=Math.max(0,window.scrollY);
+    $("#progress").style.width=(max>0?Math.min(100,y/max*100):0)+"%";
+    if(phone.matches){
+      var d=y-lastY;
+      if(y<60||d<-8) tb.classList.remove("hide"); else if(d>8) tb.classList.add("hide");
+    } else tb.classList.remove("hide");
+    lastY=y;
+  }
+  window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+  document.addEventListener("animationend",function(e){var t=e.target; if(t.classList&&t.classList.contains("page")) t.classList.remove("enter-next","enter-prev")});
+  window.addEventListener("hashchange",show);
+
+  /* geser kiri/kanan untuk pindah halaman */
+  (function(){
+    var sx=0,sy=0,st=0,ok=false;
+    document.addEventListener("touchstart",function(e){
+      var t=e.touches[0];
+      ok=e.touches.length===1 && phone.matches && !body.classList.contains("nav-open") && t.clientX>24 && t.clientX<window.innerWidth-24 && !e.target.closest(".tbl-wrap,.rib-tabs,.side,.anatomy");
+      if(window.visualViewport && window.visualViewport.scale>1.01) ok=false;
+      sx=t.clientX;sy=t.clientY;st=Date.now();
+    },{passive:true});
+    document.addEventListener("touchend",function(e){
+      if(!ok) return; ok=false;
+      var t=e.changedTouches[0], dx=t.clientX-sx, dy=t.clientY-sy;
+      if(Math.abs(dx)>70 && Math.abs(dx)>Math.abs(dy)*1.8 && Date.now()-st<700){
+        var a=dx<0?bbNext:bbPrev;
+        if(a.getAttribute("aria-disabled")!=="true") location.hash=a.getAttribute("href");
+      }
+    },{passive:true});
+  })();
+  show();
+})();
+</script>
+</body>
+</html>
